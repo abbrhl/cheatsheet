@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>EduLearn - Learning Management System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- NEPPE WEBSITE (login camouflage) -->
+  <!-- NEPPE WEBSITE -->
   <div id="fake-site">
 
-    <!-- NAVBAR -->
     <nav class="navbar">
       <div class="nav-logo">
         <span class="logo-box">edu</span>
@@ -26,27 +27,32 @@
       </div>
       <div class="nav-right">
         <div class="search-wrapper">
-          <input
-            type="text"
-            id="password-input"
-            class="search-bar"
-            placeholder="🔍 Search..."
-          />
-          <p id="error-msg">Invalid search.</p>
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="password-input" class="search-bar" placeholder="Search..." />
+          <p id="error-msg">No results found.</p>
         </div>
-        <a href="#" class="btn-demo">REQUEST A DEMO</a>
-        <a href="#" class="btn-login">LOGIN ▶</a>
+        <a href="#" class="btn-demo">Request a Demo</a>
+        <a href="#" class="btn-login">Login →</a>
       </div>
     </nav>
 
-    <!-- HERO -->
     <section class="hero">
-      <h1>An LMS <span>designed for teaching</span></h1>
-      <p>EduLearn is easy to use, saves time and works for all levels of education.</p>
-      <a href="#" class="btn-hero">REQUEST A DEMO</a>
+      <div class="hero-badge">🎓 Trusted by 5,000+ schools worldwide</div>
+      <h1>An LMS <span>designed<br>for teaching</span></h1>
+      <p>EduLearn is easy to use, saves time and works for all levels of education. Built for teachers, loved by students.</p>
+      <div class="hero-btns">
+        <a href="#" class="btn-hero-primary">Request a Demo</a>
+        <a href="#" class="btn-hero-secondary">Watch video ▶</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>5M+</strong><span>Students</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>120+</strong><span>Countries</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>99.9%</strong><span>Uptime</span></div>
+      </div>
     </section>
 
-    <!-- FEATURES -->
     <section class="features">
       <div class="feature-card">
         <div class="feature-icon green">👍</div>
@@ -60,7 +66,7 @@
         <div class="feature-icon orange">⏱️</div>
         <div>
           <h3 class="orange">Efficient</h3>
-          <p>From plans to assignments and reports. All you need, connected seamlessly in one LMS platform.</p>
+          <p>From plans to assignments and reports. All you need, connected seamlessly in one platform.</p>
         </div>
       </div>
       <div class="feature-divider"></div>
@@ -75,72 +81,76 @@
 
   </div>
 
-  <!-- CHEATSHEET (verborgen tot inlog) -->
+  <!-- CHEATSHEET -->
   <div id="cheatsheet" class="hidden">
+    <div class="cs-bg">
 
-    <header>
-      <h1>📚 Cheatsheet</h1>
-      <p class="subtitle" id="subtitle">Examen voorbereiding</p>
-    </header>
+      <header class="cs-header">
+        <div class="cs-header-inner">
+          <h1>📚 Cheatsheet</h1>
+          <p id="subtitle">Examen voorbereiding</p>
+        </div>
+      </header>
 
-    <nav class="tabs">
-      <button class="tab-btn active" onclick="openTab(event, 'onderwerp1')">Onderwerp 1</button>
-      <button class="tab-btn" onclick="openTab(event, 'onderwerp2')">Onderwerp 2</button>
-      <button class="tab-btn" onclick="openTab(event, 'onderwerp3')">Onderwerp 3</button>
-      <button class="tab-btn" onclick="openTab(event, 'onderwerp4')">Onderwerp 4</button>
-    </nav>
+      <nav class="cs-tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'onderwerp1')">Onderwerp 1</button>
+        <button class="tab-btn" onclick="openTab(event, 'onderwerp2')">Onderwerp 2</button>
+        <button class="tab-btn" onclick="openTab(event, 'onderwerp3')">Onderwerp 3</button>
+        <button class="tab-btn" onclick="openTab(event, 'onderwerp4')">Onderwerp 4</button>
+      </nav>
 
-    <main>
+      <main class="cs-main">
 
-      <div id="onderwerp1" class="tab-content active">
-        <h2>Onderwerp 1</h2>
-        <div class="card version-a">
-          <h3>Begrip / Formule (volledig)</h3>
-          <p>Uitgebreide uitleg voor versie A...</p>
+        <div id="onderwerp1" class="tab-content active">
+          <h2>Onderwerp 1</h2>
+          <div class="glass-card version-a">
+            <h3>Begrip / Formule (volledig)</h3>
+            <p>Uitgebreide uitleg voor versie A...</p>
+          </div>
+          <div class="glass-card version-b">
+            <h3>Begrip / Formule (beperkt)</h3>
+            <p>Beperkte uitleg voor versie B...</p>
+          </div>
         </div>
-        <div class="card version-b">
-          <h3>Begrip / Formule (beperkt)</h3>
-          <p>Beperkte uitleg voor versie B...</p>
-        </div>
-      </div>
 
-      <div id="onderwerp2" class="tab-content">
-        <h2>Onderwerp 2</h2>
-        <div class="card version-a">
-          <h3>Begrip / Formule (volledig)</h3>
-          <p>Uitgebreide uitleg voor versie A...</p>
+        <div id="onderwerp2" class="tab-content">
+          <h2>Onderwerp 2</h2>
+          <div class="glass-card version-a">
+            <h3>Begrip / Formule (volledig)</h3>
+            <p>Uitgebreide uitleg voor versie A...</p>
+          </div>
+          <div class="glass-card version-b">
+            <h3>Begrip / Formule (beperkt)</h3>
+            <p>Beperkte uitleg voor versie B...</p>
+          </div>
         </div>
-        <div class="card version-b">
-          <h3>Begrip / Formule (beperkt)</h3>
-          <p>Beperkte uitleg voor versie B...</p>
-        </div>
-      </div>
 
-      <div id="onderwerp3" class="tab-content">
-        <h2>Onderwerp 3</h2>
-        <div class="card version-a">
-          <h3>Begrip / Formule (volledig)</h3>
-          <p>Uitgebreide uitleg voor versie A...</p>
+        <div id="onderwerp3" class="tab-content">
+          <h2>Onderwerp 3</h2>
+          <div class="glass-card version-a">
+            <h3>Begrip / Formule (volledig)</h3>
+            <p>Uitgebreide uitleg voor versie A...</p>
+          </div>
+          <div class="glass-card version-b">
+            <h3>Begrip / Formule (beperkt)</h3>
+            <p>Beperkte uitleg voor versie B...</p>
+          </div>
         </div>
-        <div class="card version-b">
-          <h3>Begrip / Formule (beperkt)</h3>
-          <p>Beperkte uitleg voor versie B...</p>
-        </div>
-      </div>
 
-      <div id="onderwerp4" class="tab-content">
-        <h2>Onderwerp 4</h2>
-        <div class="card version-a">
-          <h3>Begrip / Formule (volledig)</h3>
-          <p>Uitgebreide uitleg voor versie A...</p>
+        <div id="onderwerp4" class="tab-content">
+          <h2>Onderwerp 4</h2>
+          <div class="glass-card version-a">
+            <h3>Begrip / Formule (volledig)</h3>
+            <p>Uitgebreide uitleg voor versie A...</p>
+          </div>
+          <div class="glass-card version-b">
+            <h3>Begrip / Formule (beperkt)</h3>
+            <p>Beperkte uitleg voor versie B...</p>
+          </div>
         </div>
-        <div class="card version-b">
-          <h3>Begrip / Formule (beperkt)</h3>
-          <p>Beperkte uitleg voor versie B...</p>
-        </div>
-      </div>
 
-    </main>
+      </main>
+    </div>
   </div>
 
   <script src="script.js"></script>
