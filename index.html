@@ -1,22 +1,78 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cheatsheet</title>
+  <title>EduLearn - Learning Management System</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- WACHTWOORD SCHERM -->
-  <div id="login-screen">
-    <div class="login-box">
-      <h1>📚 Cheatsheet</h1>
-      <p>Voer het wachtwoord in om verder te gaan</p>
-      <input type="password" id="password-input" placeholder="Wachtwoord..." />
-      <button onclick="checkPassword()">Verder →</button>
-      <p id="error-msg">Ongeldig wachtwoord, probeer opnieuw.</p>
-    </div>
+  <!-- NEPPE WEBSITE (login camouflage) -->
+  <div id="fake-site">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-logo">
+        <span class="logo-box">edu</span>
+        <span class="logo-text">learn</span>
+      </div>
+      <div class="nav-links">
+        <a href="#">Why EduLearn ▾</a>
+        <a href="#">Education Level ▾</a>
+        <a href="#">Solutions ▾</a>
+        <a href="#">Contact ▾</a>
+        <a href="#">About Us ▾</a>
+      </div>
+      <div class="nav-right">
+        <div class="search-wrapper">
+          <input
+            type="text"
+            id="password-input"
+            class="search-bar"
+            placeholder="🔍 Search..."
+          />
+          <p id="error-msg">Invalid search.</p>
+        </div>
+        <a href="#" class="btn-demo">REQUEST A DEMO</a>
+        <a href="#" class="btn-login">LOGIN ▶</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>An LMS <span>designed for teaching</span></h1>
+      <p>EduLearn is easy to use, saves time and works for all levels of education.</p>
+      <a href="#" class="btn-hero">REQUEST A DEMO</a>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon green">👍</div>
+        <div>
+          <h3 class="green">Easy</h3>
+          <p>Simple to set up and use. EduLearn automates your routine tasks, so you can focus on teaching.</p>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-card">
+        <div class="feature-icon orange">⏱️</div>
+        <div>
+          <h3 class="orange">Efficient</h3>
+          <p>From plans to assignments and reports. All you need, connected seamlessly in one LMS platform.</p>
+        </div>
+      </div>
+      <div class="feature-divider"></div>
+      <div class="feature-card">
+        <div class="feature-icon pink">✊</div>
+        <div>
+          <h3 class="pink">Empowering</h3>
+          <p>Connect with your students. Keep them engaged with positive feedback and personalised education.</p>
+        </div>
+      </div>
+    </section>
+
   </div>
 
   <!-- CHEATSHEET (verborgen tot inlog) -->
@@ -36,68 +92,52 @@
 
     <main>
 
-      <!-- ONDERWERP 1 -->
       <div id="onderwerp1" class="tab-content active">
         <h2>Onderwerp 1</h2>
-
         <div class="card version-a">
           <h3>Begrip / Formule (volledig)</h3>
           <p>Uitgebreide uitleg voor versie A...</p>
         </div>
-
         <div class="card version-b">
           <h3>Begrip / Formule (beperkt)</h3>
           <p>Beperkte uitleg voor versie B...</p>
         </div>
-
       </div>
 
-      <!-- ONDERWERP 2 -->
       <div id="onderwerp2" class="tab-content">
         <h2>Onderwerp 2</h2>
-
         <div class="card version-a">
           <h3>Begrip / Formule (volledig)</h3>
           <p>Uitgebreide uitleg voor versie A...</p>
         </div>
-
         <div class="card version-b">
           <h3>Begrip / Formule (beperkt)</h3>
           <p>Beperkte uitleg voor versie B...</p>
         </div>
-
       </div>
 
-      <!-- ONDERWERP 3 -->
       <div id="onderwerp3" class="tab-content">
         <h2>Onderwerp 3</h2>
-
         <div class="card version-a">
           <h3>Begrip / Formule (volledig)</h3>
           <p>Uitgebreide uitleg voor versie A...</p>
         </div>
-
         <div class="card version-b">
           <h3>Begrip / Formule (beperkt)</h3>
           <p>Beperkte uitleg voor versie B...</p>
         </div>
-
       </div>
 
-      <!-- ONDERWERP 4 -->
       <div id="onderwerp4" class="tab-content">
         <h2>Onderwerp 4</h2>
-
         <div class="card version-a">
           <h3>Begrip / Formule (volledig)</h3>
           <p>Uitgebreide uitleg voor versie A...</p>
         </div>
-
         <div class="card version-b">
           <h3>Begrip / Formule (beperkt)</h3>
           <p>Beperkte uitleg voor versie B...</p>
         </div>
-
       </div>
 
     </main>
