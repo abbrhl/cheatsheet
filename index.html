@@ -8,57 +8,100 @@
 </head>
 <body>
 
-  <header>
-    <h1>📚 Cheatsheet</h1>
-    <p class="subtitle">Examen voorbereiding</p>
-  </header>
-
-  <nav class="tabs">
-    <button class="tab-btn active" onclick="openTab(event, 'onderwerp1')">Onderwerp 1</button>
-    <button class="tab-btn" onclick="openTab(event, 'onderwerp2')">Onderwerp 2</button>
-    <button class="tab-btn" onclick="openTab(event, 'onderwerp3')">Onderwerp 3</button>
-    <button class="tab-btn" onclick="openTab(event, 'onderwerp4')">Onderwerp 4</button>
-  </nav>
-
-  <main>
-
-    <div id="onderwerp1" class="tab-content active">
-      <h2>Onderwerp 1</h2>
-      <div class="card">
-        <h3>Begrip / Formule</h3>
-        <p>Uitleg komt hier...</p>
-      </div>
-      <div class="card">
-        <h3>Begrip / Formule</h3>
-        <p>Uitleg komt hier...</p>
-      </div>
+  <!-- WACHTWOORD SCHERM -->
+  <div id="login-screen">
+    <div class="login-box">
+      <h1>📚 Cheatsheet</h1>
+      <p>Voer het wachtwoord in om verder te gaan</p>
+      <input type="password" id="password-input" placeholder="Wachtwoord..." />
+      <button onclick="checkPassword()">Verder →</button>
+      <p id="error-msg">Ongeldig wachtwoord, probeer opnieuw.</p>
     </div>
+  </div>
 
-    <div id="onderwerp2" class="tab-content">
-      <h2>Onderwerp 2</h2>
-      <div class="card">
-        <h3>Begrip / Formule</h3>
-        <p>Uitleg komt hier...</p>
+  <!-- CHEATSHEET (verborgen tot inlog) -->
+  <div id="cheatsheet" class="hidden">
+
+    <header>
+      <h1>📚 Cheatsheet</h1>
+      <p class="subtitle" id="subtitle">Examen voorbereiding</p>
+    </header>
+
+    <nav class="tabs">
+      <button class="tab-btn active" onclick="openTab(event, 'onderwerp1')">Onderwerp 1</button>
+      <button class="tab-btn" onclick="openTab(event, 'onderwerp2')">Onderwerp 2</button>
+      <button class="tab-btn" onclick="openTab(event, 'onderwerp3')">Onderwerp 3</button>
+      <button class="tab-btn" onclick="openTab(event, 'onderwerp4')">Onderwerp 4</button>
+    </nav>
+
+    <main>
+
+      <!-- ONDERWERP 1 -->
+      <div id="onderwerp1" class="tab-content active">
+        <h2>Onderwerp 1</h2>
+
+        <div class="card version-a">
+          <h3>Begrip / Formule (volledig)</h3>
+          <p>Uitgebreide uitleg voor versie A...</p>
+        </div>
+
+        <div class="card version-b">
+          <h3>Begrip / Formule (beperkt)</h3>
+          <p>Beperkte uitleg voor versie B...</p>
+        </div>
+
       </div>
-    </div>
 
-    <div id="onderwerp3" class="tab-content">
-      <h2>Onderwerp 3</h2>
-      <div class="card">
-        <h3>Begrip / Formule</h3>
-        <p>Uitleg komt hier...</p>
+      <!-- ONDERWERP 2 -->
+      <div id="onderwerp2" class="tab-content">
+        <h2>Onderwerp 2</h2>
+
+        <div class="card version-a">
+          <h3>Begrip / Formule (volledig)</h3>
+          <p>Uitgebreide uitleg voor versie A...</p>
+        </div>
+
+        <div class="card version-b">
+          <h3>Begrip / Formule (beperkt)</h3>
+          <p>Beperkte uitleg voor versie B...</p>
+        </div>
+
       </div>
-    </div>
 
-    <div id="onderwerp4" class="tab-content">
-      <h2>Onderwerp 4</h2>
-      <div class="card">
-        <h3>Begrip / Formule</h3>
-        <p>Uitleg komt hier...</p>
+      <!-- ONDERWERP 3 -->
+      <div id="onderwerp3" class="tab-content">
+        <h2>Onderwerp 3</h2>
+
+        <div class="card version-a">
+          <h3>Begrip / Formule (volledig)</h3>
+          <p>Uitgebreide uitleg voor versie A...</p>
+        </div>
+
+        <div class="card version-b">
+          <h3>Begrip / Formule (beperkt)</h3>
+          <p>Beperkte uitleg voor versie B...</p>
+        </div>
+
       </div>
-    </div>
 
-  </main>
+      <!-- ONDERWERP 4 -->
+      <div id="onderwerp4" class="tab-content">
+        <h2>Onderwerp 4</h2>
+
+        <div class="card version-a">
+          <h3>Begrip / Formule (volledig)</h3>
+          <p>Uitgebreide uitleg voor versie A...</p>
+        </div>
+
+        <div class="card version-b">
+          <h3>Begrip / Formule (beperkt)</h3>
+          <p>Beperkte uitleg voor versie B...</p>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
