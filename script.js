@@ -2,7 +2,7 @@ const WACHTWOORD_A = "A2006"; // Volledige versie
 const WACHTWOORD_B = "R2007"; // Beperkte versie
 
 function checkPassword() {
-  const input = document.getElementById("password-input").value;
+  const input = document.getElementById("password-input").value.trim();
   const error = document.getElementById("error-msg");
 
   if (input === WACHTWOORD_A) {
@@ -12,12 +12,13 @@ function checkPassword() {
   } else {
     error.style.display = "block";
     document.getElementById("password-input").value = "";
+    setTimeout(() => { error.style.display = "none"; }, 2500);
   }
 }
 
 function toonCheatsheet(versie) {
-  // Verberg login scherm
-  document.getElementById("login-screen").style.display = "none";
+  // Verberg neppe website
+  document.getElementById("fake-site").style.display = "none";
 
   // Toon cheatsheet
   document.getElementById("cheatsheet").classList.remove("hidden");
@@ -32,6 +33,9 @@ function toonCheatsheet(versie) {
     document.querySelectorAll(".version-b").forEach(el => el.style.display = "block");
     document.getElementById("subtitle").textContent = "Examen voorbereiding";
   }
+
+  // Scroll naar boven
+  window.scrollTo(0, 0);
 }
 
 function openTab(event, tabId) {
@@ -41,9 +45,15 @@ function openTab(event, tabId) {
   event.currentTarget.classList.add("active");
 }
 
-// Enter toets werkt ook op het wachtwoordveld
+// Enter toets activeert inloggen
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("password-input").addEventListener("keydown", function(e) {
-    if (e.key === "Enter") checkPassword();
-  });
+  const input = document.getElementById("password-input");
+  if (input) {
+    input.addEventListener("keydown", function(e) {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        checkPassword();
+      }
+    });
+  }
 });
