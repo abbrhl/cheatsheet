@@ -81,71 +81,151 @@
 
   </div>
 
-  <!-- CHEATSHEET -->
-  <div id="cheatsheet" class="hidden">
-    <div class="cs-bg">
+  <!-- STUDY PORTAL -->
+  <div id="study-portal" class="hidden">
+    <div class="portal-bg">
 
-      <header class="cs-header">
-        <div class="cs-header-inner">
-          <h1>📚 Cheatsheet</h1>
-          <p id="subtitle">Examen voorbereiding</p>
+      <header class="portal-header">
+        <div class="portal-header-inner">
+          <div class="portal-badge">Academic Dashboard</div>
+          <h1>Study Portal</h1>
+          <p id="subtitle">Advanced Learning Resources</p>
         </div>
       </header>
 
-      <nav class="cs-tabs">
-        <button class="tab-btn active" onclick="openTab(event, 'onderwerp1')">Onderwerp 1</button>
-        <button class="tab-btn" onclick="openTab(event, 'onderwerp2')">Onderwerp 2</button>
-        <button class="tab-btn" onclick="openTab(event, 'onderwerp3')">Onderwerp 3</button>
-        <button class="tab-btn" onclick="openTab(event, 'onderwerp4')">Onderwerp 4</button>
+      <nav class="portal-tabs">
+        <div class="tabs-container">
+          <button class="tab-btn active" onclick="openTab(event, 'onderwerp1')">
+            <span class="tab-icon">📖</span> Onderwerp 1
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'onderwerp2')">
+            <span class="tab-icon">🧪</span> Onderwerp 2
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'onderwerp3')">
+            <span class="tab-icon">📉</span> Onderwerp 3
+          </button>
+          <button class="tab-btn" onclick="openTab(event, 'onderwerp4')">
+            <span class="tab-icon">🌍</span> Onderwerp 4
+          </button>
+        </div>
       </nav>
 
-      <main class="cs-main">
+      <main class="portal-main">
 
         <div id="onderwerp1" class="tab-content active">
-          <h2>Onderwerp 1</h2>
-          <div class="glass-card version-a">
-            <h3>Begrip / Formule (volledig)</h3>
-            <p>Uitgebreide uitleg voor versie A...</p>
+          <div class="content-header">
+            <h2>Onderwerp 1</h2>
+            <div class="content-stats">
+              <span>2 Modules</span>
+              <span class="dot">•</span>
+              <span>Updated Today</span>
+            </div>
           </div>
-          <div class="glass-card version-b">
-            <h3>Begrip / Formule (beperkt)</h3>
-            <p>Beperkte uitleg voor versie B...</p>
+          <div class="grid-layout">
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>Begrip / Formule (volledig)</h3>
+              <p>Uitgebreide uitleg voor versie A. This section contains detailed analysis and comprehensive formulas for advanced study.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
+            <div class="glass-card version-b">
+              <div class="card-tag secondary">Essential</div>
+              <h3>Begrip / Formule (beperkt)</h3>
+              <p>Beperkte uitleg voor versie B. Focused on key concepts and fundamental principles for quick review.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
           </div>
         </div>
 
         <div id="onderwerp2" class="tab-content">
-          <h2>Onderwerp 2</h2>
-          <div class="glass-card version-a">
-            <h3>Begrip / Formule (volledig)</h3>
-            <p>Uitgebreide uitleg voor versie A...</p>
+          <div class="content-header">
+            <h2>Onderwerp 2</h2>
+            <div class="content-stats">
+              <span>2 Modules</span>
+              <span class="dot">•</span>
+              <span>Updated Yesterday</span>
+            </div>
           </div>
-          <div class="glass-card version-b">
-            <h3>Begrip / Formule (beperkt)</h3>
-            <p>Beperkte uitleg voor versie B...</p>
+          <div class="grid-layout">
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>Begrip / Formule (volledig)</h3>
+              <p>Uitgebreide uitleg voor versie A. Deep dive into Subject 2 with practical examples and derivations.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
+            <div class="glass-card version-b">
+              <div class="card-tag secondary">Essential</div>
+              <h3>Begrip / Formule (beperkt)</h3>
+              <p>Beperkte uitleg voor versie B. Core summary of Subject 2 for exam preparation.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
           </div>
         </div>
 
+        <!-- Subjects 3 and 4 follow the same structure -->
         <div id="onderwerp3" class="tab-content">
-          <h2>Onderwerp 3</h2>
-          <div class="glass-card version-a">
-            <h3>Begrip / Formule (volledig)</h3>
-            <p>Uitgebreide uitleg voor versie A...</p>
+          <div class="content-header">
+            <h2>Onderwerp 3</h2>
+            <div class="content-stats">
+              <span>2 Modules</span>
+              <span class="dot">•</span>
+              <span>New</span>
+            </div>
           </div>
-          <div class="glass-card version-b">
-            <h3>Begrip / Formule (beperkt)</h3>
-            <p>Beperkte uitleg voor versie B...</p>
+          <div class="grid-layout">
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>Begrip / Formule (volledig)</h3>
+              <p>Uitgebreide uitleg voor versie A. Extensive documentation for Subject 3.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
+            <div class="glass-card version-b">
+              <div class="card-tag secondary">Essential</div>
+              <h3>Begrip / Formule (beperkt)</h3>
+              <p>Beperkte uitleg voor versie B. High-level overview of Subject 3.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
           </div>
         </div>
 
         <div id="onderwerp4" class="tab-content">
-          <h2>Onderwerp 4</h2>
-          <div class="glass-card version-a">
-            <h3>Begrip / Formule (volledig)</h3>
-            <p>Uitgebreide uitleg voor versie A...</p>
+          <div class="content-header">
+            <h2>Onderwerp 4</h2>
+            <div class="content-stats">
+              <span>2 Modules</span>
+              <span class="dot">•</span>
+              <span>Review Needed</span>
+            </div>
           </div>
-          <div class="glass-card version-b">
-            <h3>Begrip / Formule (beperkt)</h3>
-            <p>Beperkte uitleg voor versie B...</p>
+          <div class="grid-layout">
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>Begrip / Formule (volledig)</h3>
+              <p>Uitgebreide uitleg voor versie A. Comprehensive guide for Subject 4.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
+            <div class="glass-card version-b">
+              <div class="card-tag secondary">Essential</div>
+              <h3>Begrip / Formule (beperkt)</h3>
+              <p>Beperkte uitleg voor versie B. Quick reference for Subject 4.</p>
+              <div class="card-footer">
+                <button class="card-btn">Read More</button>
+              </div>
+            </div>
           </div>
         </div>
 

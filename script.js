@@ -6,9 +6,9 @@ function checkPassword() {
   const error = document.getElementById("error-msg");
 
   if (input === WACHTWOORD_A) {
-    toonCheatsheet("a");
+    toonPortal("a");
   } else if (input === WACHTWOORD_B) {
-    toonCheatsheet("b");
+    toonPortal("b");
   } else {
     error.style.display = "block";
     document.getElementById("password-input").value = "";
@@ -16,22 +16,22 @@ function checkPassword() {
   }
 }
 
-function toonCheatsheet(versie) {
+function toonPortal(versie) {
   // Verberg neppe website
   document.getElementById("fake-site").style.display = "none";
 
-  // Toon cheatsheet
-  document.getElementById("cheatsheet").classList.remove("hidden");
+  // Toon portal
+  document.getElementById("study-portal").classList.remove("hidden");
 
   // Toon juiste versie kaarten
   if (versie === "a") {
     document.querySelectorAll(".version-a").forEach(el => el.style.display = "block");
     document.querySelectorAll(".version-b").forEach(el => el.style.display = "none");
-    document.getElementById("subtitle").textContent = "Volledige versie";
+    document.getElementById("subtitle").textContent = "Full Academic Access";
   } else {
     document.querySelectorAll(".version-a").forEach(el => el.style.display = "none");
     document.querySelectorAll(".version-b").forEach(el => el.style.display = "block");
-    document.getElementById("subtitle").textContent = "Examen voorbereiding";
+    document.getElementById("subtitle").textContent = "Essential Study Materials";
   }
 
   // Scroll naar boven
