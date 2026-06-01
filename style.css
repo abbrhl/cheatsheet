@@ -824,6 +824,26 @@ h3.pink   { color: #c0397a; }
   display: block;
 }
 
+/* TABLE THUMBNAILS */
+.thumb {
+  max-width: 120px;
+  max-height: 80px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: #fff;
+  padding: 2px;
+  margin: 2px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  vertical-align: middle;
+}
+
+.thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(167,139,250,0.4);
+  border-color: #a78bfa;
+}
+
 .prose hr {
   border: none;
   height: 1px;
