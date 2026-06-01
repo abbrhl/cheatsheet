@@ -45,6 +45,11 @@ function openTab(event, tabId) {
   event.currentTarget.classList.add("active");
 }
 
+function toggleDetail(elementId) {
+  const element = document.getElementById(elementId);
+  element.classList.toggle("open");
+}
+
 // Enter toets activeert inloggen
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("password-input");

@@ -572,6 +572,69 @@ h3.pink   { color: #c0397a; }
   color: #000;
 }
 
+.wide-card {
+  grid-column: 1 / -1;
+}
+
+.portal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.portal-table th, .portal-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.portal-table th {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-weight: 700;
+}
+
+.portal-table.small-text {
+  font-size: 0.75rem;
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.expandable-content.open {
+  max-height: 1000px; /* Adjust as needed */
+  transition: max-height 0.5s ease-in;
+}
+
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.detail-list li {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.detail-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #a78bfa;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links { display: none; }

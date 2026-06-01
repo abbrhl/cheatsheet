@@ -120,94 +120,95 @@
           <div class="content-header">
             <h2>P2-K2 Examen — Apotheek AmeRijck</h2>
             <div class="content-stats">
-              <span>Exam Prep</span>
+              <span>Full Access</span>
               <span class="dot">•</span>
-              <span>Audit & Incident Response</span>
+              <span>Audit & Response</span>
             </div>
           </div>
 
           <div class="grid-layout">
-            <!-- VERSION A: DETAILED CONTENT -->
-            <div class="glass-card version-a">
+            <!-- TIME & TOOLS -->
+            <div class="glass-card version-a wide-card">
               <div class="card-tag">Full Content</div>
-              <h3>⏰ Tijdmanagement & Tools</h3>
-              <p>Verdeling van de 6 uur durende sessie:</p>
-              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
-                <li><b>W1 (Audit):</b> 180 min (Scans, Interviews, Rapportage)</li>
-                <li><b>W2 (Incident):</b> 180 min (Onderzoek, Mail, Hardening)</li>
-              </ul>
-              <p style="margin-top: 1rem;"><b>Tools:</b> Nmap, MBSA, Sysinternals, Event Viewer, Malwarebytes.</p>
-              <div class="card-footer">
-                <button class="card-btn">Open Full Timeline</button>
+              <h3>⏰ Tijdmanagement & ToolBox</h3>
+              <div class="detailed-info">
+                <table class="portal-table">
+                  <thead>
+                    <tr><th>Opdracht</th><th>Tijd</th><th>Inleveren</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Opdracht 1 (W1)</td><td>180 min</td><td>Auditrapport</td></tr>
+                    <tr><td>Opdracht 2 (W2)</td><td>180 min</td><td>Verslag + Mail + Server + Log</td></tr>
+                  </tbody>
+                </table>
+                <p style="margin-top: 1rem;"><b>Tools (SRV001):</b> Nmap, MBSA, Sysinternals, Event Viewer, Malwarebytes, Wireshark.</p>
               </div>
             </div>
 
+            <!-- OPDRACHT 1 -->
             <div class="glass-card version-a">
               <div class="card-tag">Full Content</div>
-              <h3>📋 Opdracht 1: Audit SRV001</h3>
-              <p>Focus op technische scans en menselijk gedrag. Gebruik de risicomatrix (Kans x Impact).</p>
-              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
-                <li>Check open poorten (464, 636)</li>
-                <li>Interviews: wachtwoorden onder toetsenbord, geen lock-beleid</li>
-                <li>Advies moet <b>SMART</b> zijn</li>
-              </ul>
+              <h3>📋 W1: Audit SRV001</h3>
+              <p>Stappenplan en risicoanalyse voor de eerste serverscan.</p>
+              <div class="expandable-content" id="w1-detail">
+                <ul class="detail-list">
+                  <li><b>Scans:</b> Nmap (poorten), MBSA (config), Event Viewer (logins).</li>
+                  <li><b>Mens & Beleid:</b> Check interviews op wachtwoorden onder toetsenbord, open computers, USB-sticks.</li>
+                  <li><b>Rapportage:</b> Gebruik Risicomatrix (Kans x Impact) en SMART adviezen.</li>
+                </ul>
+              </div>
               <div class="card-footer">
-                <button class="card-btn">Audit Checklist</button>
+                <button class="card-btn" onclick="toggleDetail('w1-detail')">Toggle Details</button>
               </div>
             </div>
 
+            <!-- OPDRACHT 2 -->
             <div class="glass-card version-a">
               <div class="card-tag">Full Content</div>
-              <h3>🚨 Opdracht 2: Incident Response SRV002</h3>
-              <p>Beantwoord de 4 directie-vragen: Hoe, Wanneer, Welke info, Hoeveel buit?</p>
-              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
-                <li>Onderzoek MySQL logs en Event Viewer</li>
-                <li>Meld datalek binnen 72u bij AP (AVG/GDPR)</li>
-                <li>Hardening: Root wachtwoord, verwijder RAT (AnyDesk/TeamViewer)</li>
-              </ul>
+              <h3>🚨 W2: Incident Response SRV002</h3>
+              <p>Onderzoek naar het MySQL datalek en server hardening.</p>
+              <div class="expandable-content" id="w2-detail">
+                <ul class="detail-list">
+                  <li><b>4 Vragen:</b> Hoe, Wanneer, Welke info, Hoeveel buit?</li>
+                  <li><b>MySQL Hardening:</b> Root WW wijzigen, anoniem account weg, remote root login uit.</li>
+                  <li><b>RAT Removal:</b> Check TeamViewer/AnyDesk/ngrok.</li>
+                  <li><b>AVG:</b> Meld datalek binnen 72u bij AP.</li>
+                </ul>
+              </div>
               <div class="card-footer">
-                <button class="card-btn">Technical Procedures</button>
+                <button class="card-btn" onclick="toggleDetail('w2-detail')">Toggle Details</button>
               </div>
             </div>
 
+            <!-- POORTEN & CHECKLIST -->
             <div class="glass-card version-a">
               <div class="card-tag">Full Content</div>
-              <h3>✅ Eindchecklist</h3>
-              <p>Zorg dat je alle bijlagen (1.2, 2.1, 2.2, 2.4) volledig hebt ingevuld met screenshots (Voor, Tijdens, Na).</p>
+              <h3>🔍 Poorten & Checklist</h3>
+              <div class="expandable-content" id="check-detail">
+                <table class="portal-table small-text">
+                  <thead><tr><th>Poort</th><th>Service</th></tr></thead>
+                  <tbody>
+                    <tr><td>3306</td><td>MySQL (Target)</td></tr>
+                    <tr><td>3389</td><td>RDP (Toegang)</td></tr>
+                    <tr><td>>10k</td><td>RAT / Backdoor</td></tr>
+                  </tbody>
+                </table>
+                <p style="margin-top: 1rem;"><b>Checklist:</b> Screenshots (Voor, Tijdens, Na) in Logboek 2.4.</p>
+              </div>
               <div class="card-footer">
-                <button class="card-btn">Final Validation</button>
+                <button class="card-btn" onclick="toggleDetail('check-detail')">View Checklist</button>
               </div>
             </div>
 
-            <!-- VERSION B: ESSENTIAL CONTENT -->
-            <div class="glass-card version-b">
+            <!-- VERSION B: SIMPLIFIED -->
+            <div class="glass-card version-b wide-card">
               <div class="card-tag secondary">Essential</div>
-              <h3>🚀 Snelstart Gids</h3>
-              <p>Focus op de hoogste risico's:</p>
-              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
-                <li>Start met Nmap & MBSA</li>
-                <li>Incident: Isoleer server, wijzig WW, verwijder RAT</li>
-                <li>Meld datalek direct (AVG 72u)</li>
-              </ul>
-            </div>
-
-            <div class="glass-card version-b">
-              <div class="card-tag secondary">Essential</div>
-              <h3>🔍 Kritieke Poorten</h3>
-              <p>Let op deze poorten tijdens scans:</p>
-              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
-                <li><b>3306:</b> MySQL (Target)</li>
-                <li><b>3389:</b> RDP (Toegang)</li>
-                <li><b>>10000:</b> Mogelijk RAT/Backdoor</li>
-              </ul>
-            </div>
-
-            <div class="glass-card version-b">
-              <div class="card-tag secondary">Essential</div>
-              <h3>📧 Rapporteren</h3>
-              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
-                <li>Audit: Altijd SMART adviezen</li>
-                <li>Mail: Noem AVG meldplicht en herstelstappen</li>
+              <h3>🚀 Examen Quick-Ref</h3>
+              <p>Directe actiepunten voor het examen:</p>
+              <ul class="detail-list">
+                <li><b>W1:</b> Nmap scan -> Risico matrix -> SMART advies.</li>
+                <li><b>W2:</b> Isoleer server -> MySQL hardening -> AVG melding AP.</li>
+                <li><b>Tools:</b> Alles staat in de ToolBox map op SRV001 desktop.</li>
               </ul>
             </div>
           </div>
