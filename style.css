@@ -749,6 +749,69 @@ h3.pink   { color: #c0397a; }
   box-shadow: 0 8px 22px rgba(102,126,234,0.5);
 }
 
+/* RISK MATRIX */
+.risk-matrix {
+  background: #f8f9fa;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0 1.5rem;
+  max-width: 560px;
+  color: #1a1a1a;
+}
+
+.rm-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+  color: #222;
+  padding-left: 2.5rem;
+}
+
+.rm-grid {
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.rm-axis-y {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  grid-row: 1 / span 3;
+}
+
+.rm-axis-x {
+  grid-column: 2;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.4rem;
+}
+
+.rm-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.rm-cell {
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  color: #222;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-size: 0.95rem;
+}
+
+.rm-red    { background: #e74c3c; color: #fff; }
+.rm-orange { background: #f39c12; }
+.rm-yellow { background: #f1c40f; }
+.rm-green  { background: #7cb342; color: #fff; }
+
 .prose hr {
   border: none;
   height: 1px;
