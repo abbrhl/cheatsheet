@@ -118,100 +118,649 @@
         <!-- CLAUDE EXAM TAB -->
         <div id="claude" class="tab-content">
           <div class="content-header">
-            <h2>P2-K2 Examen — Apotheek AmeRijck</h2>
+            <h2>Cheatsheet P2-K2 Examen — Apotheek AmeRijck</h2>
             <div class="content-stats">
-              <span>Full Access</span>
+              <span>Audit & Incident Response</span>
               <span class="dot">•</span>
-              <span>Audit & Response</span>
+              <span>6 uur totaal</span>
             </div>
           </div>
 
-          <div class="grid-layout">
-            <!-- TIME & TOOLS -->
-            <div class="glass-card version-a wide-card">
-              <div class="card-tag">Full Content</div>
-              <h3>⏰ Tijdmanagement & ToolBox</h3>
-              <div class="detailed-info">
-                <table class="portal-table">
-                  <thead>
-                    <tr><th>Opdracht</th><th>Tijd</th><th>Inleveren</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Opdracht 1 (W1)</td><td>180 min</td><td>Auditrapport</td></tr>
-                    <tr><td>Opdracht 2 (W2)</td><td>180 min</td><td>Verslag + Mail + Server + Log</td></tr>
-                  </tbody>
-                </table>
-                <p style="margin-top: 1rem;"><b>Tools (SRV001):</b> Nmap, MBSA, Sysinternals, Event Viewer, Malwarebytes, Wireshark.</p>
-              </div>
-            </div>
+          <!-- VOLLEDIGE TEKST — beide versies tonen hetzelfde -->
+          <article class="prose version-a">
+            <h3>⏰ Tijdmanagement (6 uur totaal)</h3>
+            <table class="prose-table">
+              <thead>
+                <tr><th>Opdracht</th><th>Tijd</th><th>Wat lever je in</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><b>Opdracht 1 (W1)</b></td><td>180 min</td><td>Auditrapport</td></tr>
+                <tr><td><b>Opdracht 2 (W2)</b></td><td>180 min</td><td>Onderzoeksverslag + E-mail + Aangepaste server + Logboek</td></tr>
+              </tbody>
+            </table>
 
-            <!-- OPDRACHT 1 -->
-            <div class="glass-card version-a">
-              <div class="card-tag">Full Content</div>
-              <h3>📋 W1: Audit SRV001</h3>
-              <p>Stappenplan en risicoanalyse voor de eerste serverscan.</p>
-              <div class="expandable-content" id="w1-detail">
-                <ul class="detail-list">
-                  <li><b>Scans:</b> Nmap (poorten), MBSA (config), Event Viewer (logins).</li>
-                  <li><b>Mens & Beleid:</b> Check interviews op wachtwoorden onder toetsenbord, open computers, USB-sticks.</li>
-                  <li><b>Rapportage:</b> Gebruik Risicomatrix (Kans x Impact) en SMART adviezen.</li>
-                </ul>
-              </div>
-              <div class="card-footer">
-                <button class="card-btn" onclick="toggleDetail('w1-detail')">Toggle Details</button>
-              </div>
-            </div>
+            <p><b>Verdeel binnen Opdracht 1:</b></p>
+            <ul>
+              <li>30 min scans uitvoeren (Nmap, MBSA, etc.)</li>
+              <li>30 min interviews + firewall-log doorlezen</li>
+              <li>30 min analyseren + risico's inschatten</li>
+              <li>90 min auditrapport schrijven</li>
+            </ul>
 
-            <!-- OPDRACHT 2 -->
-            <div class="glass-card version-a">
-              <div class="card-tag">Full Content</div>
-              <h3>🚨 W2: Incident Response SRV002</h3>
-              <p>Onderzoek naar het MySQL datalek en server hardening.</p>
-              <div class="expandable-content" id="w2-detail">
-                <ul class="detail-list">
-                  <li><b>4 Vragen:</b> Hoe, Wanneer, Welke info, Hoeveel buit?</li>
-                  <li><b>MySQL Hardening:</b> Root WW wijzigen, anoniem account weg, remote root login uit.</li>
-                  <li><b>RAT Removal:</b> Check TeamViewer/AnyDesk/ngrok.</li>
-                  <li><b>AVG:</b> Meld datalek binnen 72u bij AP.</li>
-                </ul>
-              </div>
-              <div class="card-footer">
-                <button class="card-btn" onclick="toggleDetail('w2-detail')">Toggle Details</button>
-              </div>
-            </div>
+            <p><b>Verdeel binnen Opdracht 2:</b></p>
+            <ul>
+              <li>45 min onderzoek SRV002 (logs, MySQL, processen)</li>
+              <li>45 min onderzoeksverslag invullen</li>
+              <li>30 min e-mail schrijven</li>
+              <li>60 min server aanpassen + logboek met screenshots</li>
+            </ul>
 
-            <!-- POORTEN & CHECKLIST -->
-            <div class="glass-card version-a">
-              <div class="card-tag">Full Content</div>
-              <h3>🔍 Poorten & Checklist</h3>
-              <div class="expandable-content" id="check-detail">
-                <table class="portal-table small-text">
-                  <thead><tr><th>Poort</th><th>Service</th></tr></thead>
-                  <tbody>
-                    <tr><td>3306</td><td>MySQL (Target)</td></tr>
-                    <tr><td>3389</td><td>RDP (Toegang)</td></tr>
-                    <tr><td>>10k</td><td>RAT / Backdoor</td></tr>
-                  </tbody>
-                </table>
-                <p style="margin-top: 1rem;"><b>Checklist:</b> Screenshots (Voor, Tijdens, Na) in Logboek 2.4.</p>
-              </div>
-              <div class="card-footer">
-                <button class="card-btn" onclick="toggleDetail('check-detail')">View Checklist</button>
-              </div>
-            </div>
+            <hr>
 
-            <!-- VERSION B: SIMPLIFIED -->
-            <div class="glass-card version-b wide-card">
-              <div class="card-tag secondary">Essential</div>
-              <h3>🚀 Examen Quick-Ref</h3>
-              <p>Directe actiepunten voor het examen:</p>
-              <ul class="detail-list">
-                <li><b>W1:</b> Nmap scan -> Risico matrix -> SMART advies.</li>
-                <li><b>W2:</b> Isoleer server -> MySQL hardening -> AVG melding AP.</li>
-                <li><b>Tools:</b> Alles staat in de ToolBox map op SRV001 desktop.</li>
-              </ul>
-            </div>
-          </div>
+            <h3>🧰 Tools cheatsheet (ToolBox op desktop SRV001)</h3>
+            <table class="prose-table">
+              <thead><tr><th>Tool</th><th>Waarvoor gebruiken</th></tr></thead>
+              <tbody>
+                <tr><td><b>Nmap</b></td><td>Open poorten scannen — welke services draaien? Welke zijn vreemd?</td></tr>
+                <tr><td><b>Microsoft Baseline Security Analyzer (MBSA)</b></td><td>Windows config check, missing updates, zwakke wachtwoordbeleid</td></tr>
+                <tr><td><b>Sysinternals Suite</b> (Process Explorer, Autoruns, TCPView)</td><td>Verdachte processen, auto-start programs, actieve netwerkverbindingen</td></tr>
+                <tr><td><b>Event Viewer</b></td><td>Logins, security events, fouten — zoek op rare tijdstippen</td></tr>
+                <tr><td><b>Malwarebytes</b></td><td>Scan op malware/RATs</td></tr>
+                <tr><td><b>Wireshark</b></td><td>Netwerkverkeer analyseren (als nodig)</td></tr>
+              </tbody>
+            </table>
+            <p><b>Praktisch:</b> start altijd met Nmap (overzicht) + MBSA (config) + Event Viewer (recente activiteit). Daarna gericht inzoomen.</p>
+
+            <hr>
+
+            <h3>📋 Opdracht 1 (W1) — Audit van SRV001</h3>
+            <h4>Stappenplan</h4>
+            <ol>
+              <li><b>Inloggen</b> als administrator op SRV001</li>
+              <li><b>Tools openen</b> uit ToolBox folder</li>
+              <li><b>Nmap</b> op localhost/SRV001 → noteer open poorten</li>
+              <li><b>MBSA</b> scan → noteer security misconfiguraties</li>
+              <li><b>Event Viewer</b> → security log → verdachte logins?</li>
+              <li><b>Firewall-log</b> op bureaublad → vreemde verbindingen?</li>
+              <li><b>Bestandssysteem</b> check → Downloads folder, share folders, desktop</li>
+              <li><b>Interviews</b> (Bijlage 1.1) doorlezen — wat zeggen balie/backoffice/apotheker?</li>
+              <li><b>Combineer</b> technische + menselijke bevindingen</li>
+              <li><b>Auditrapport</b> invullen (Bijlage 1.2)</li>
+            </ol>
+
+            <h4>Waar je naar kijkt — categorieën</h4>
+            <p><b>🖥️ Server (SRV001) — technische scan</b></p>
+            <ul>
+              <li>Open poorten (let op rare zoals 464, 636 — wat is hun functie?)</li>
+              <li>Verouderde updates / patches</li>
+              <li>Firewall status (uit/aan)</li>
+              <li>Gedeelde mappen — wie heeft toegang?</li>
+              <li>Verdachte bestanden in Downloads of op desktop</li>
+              <li>Onbekende auto-start programma's</li>
+              <li>Wachtwoordbeleid (te zwak?)</li>
+              <li>Verbindingen met externe netwerken in firewall-log</li>
+            </ul>
+
+            <p><b>👥 Mens &amp; beleid (uit interviews)</b></p>
+            <ul>
+              <li>Computers niet vergrendelen</li>
+              <li>Wachtwoorden onder toetsenbord</li>
+              <li>USB-sticks gedeeld</li>
+              <li>Geen logboek bij sluiting</li>
+              <li>Geen beveiligingscamera's</li>
+              <li>Geen beveiligingsbeleid</li>
+              <li>Papieren met persoonsgegevens in prullenbak</li>
+              <li>Geen autorisatieniveaus (iedereen kan alles)</li>
+              <li>Externe IT'er (man van medewerker) — wie heeft toegang?</li>
+            </ul>
+
+            <h4>Risicobeoordeling — gebruik een matrix</h4>
+            <p>Per bevinding bepaal je: <b>Kans × Impact = Risico</b></p>
+            <table class="prose-table">
+              <thead><tr><th>Niveau</th><th>Wanneer?</th></tr></thead>
+              <tbody>
+                <tr><td><b>Hoog</b></td><td>Direct gevaar voor patiëntgegevens (AVG-overtreding mogelijk)</td></tr>
+                <tr><td><b>Middel</b></td><td>Indirect risico, vereist combinatie met andere factor</td></tr>
+                <tr><td><b>Laag</b></td><td>Hygiëne-issue, geen directe dreiging</td></tr>
+              </tbody>
+            </table>
+            <p>Voorbeelden:</p>
+            <ul>
+              <li>Wachtwoord onder toetsenbord + iedereen kan binnenlopen = <b>HOOG</b></li>
+              <li>Verouderde updates = <b>HOOG</b> (bekende exploits)</li>
+              <li>Geen logboek sluiting = <b>MIDDEL</b></li>
+            </ul>
+
+            <h4>Auditrapport structuur (Bijlage 1.2)</h4>
+            <ol>
+              <li><b>Inleiding</b> — wie, wat, wanneer, doel audit</li>
+              <li><b>Scope</b> — wat is gecontroleerd (SRV001 + interviews)</li>
+              <li><b>Methodiek</b> — welke tools en methoden gebruikt</li>
+              <li><b>Bevindingen</b> — per categorie (server / netwerk / mens / beleid)</li>
+              <li><b>Risicoanalyse</b> — matrix met risiconiveaus</li>
+              <li><b>Advies / verbetervoorstellen</b> — concreet & haalbaar</li>
+              <li><b>Conclusie</b></li>
+            </ol>
+
+            <h4>⚠️ Tips voor het advies</h4>
+            <ul>
+              <li>Maak adviezen <b>SMART</b>: specifiek, meetbaar, haalbaar</li>
+              <li>Niet "verbeter de beveiliging" maar "implementeer wachtwoordbeleid: min. 12 tekens, 90 dagen geldig, MFA verplicht"</li>
+              <li>Per bevinding 1 concreet advies</li>
+              <li>Prioriteer: hoog risico eerst</li>
+            </ul>
+
+            <hr>
+
+            <h3>🚨 Opdracht 2 (W2) — Incident response SRV002 (MySQL datalek)</h3>
+            <h4>De 4 vragen die de directie wil beantwoord hebben</h4>
+            <table class="prose-table">
+              <thead><tr><th>Vraag</th><th>Hoe vinden?</th></tr></thead>
+              <tbody>
+                <tr><td><b>a. Hoe kon het gebeuren?</b></td><td>MySQL config, gebruikersrechten, open poorten, processen, autoruns</td></tr>
+                <tr><td><b>b. Wanneer is het gebeurd?</b></td><td>MySQL logs, Event Viewer security log, file timestamps</td></tr>
+                <tr><td><b>c. Welke informatie?</b></td><td>Database inhoud bekijken — welke tabellen, welke velden</td></tr>
+                <tr><td><b>d. Hoeveel buitgemaakt?</b></td><td>Aantal records in tabellen, log van queries</td></tr>
+              </tbody>
+            </table>
+
+            <h4>Onderzoek op SRV002 — stappenplan</h4>
+            <ol>
+              <li><b>Login</b> via RDP</li>
+              <li><b>Verdachte processen</b> check (Task Manager / Process Explorer)</li>
+              <li><b>MySQL</b> openen — welke databases, welke tabellen, hoeveel records</li>
+              <li><b>MySQL logs</b> check (<code>C:\ProgramData\MySQL\...\Data\*.err</code> of <code>query.log</code>)</li>
+              <li><b>Event Viewer</b> → Security log → recente logins</li>
+              <li><b>Open poorten</b> check (<code>netstat -an</code> of TCPView)</li>
+              <li><b>Geïnstalleerde programma's</b> check — staat er een RAT? (TeamViewer, AnyDesk, ngrok, NetCat?)</li>
+              <li><b>Autoruns</b> — wat start er automatisch?</li>
+              <li><b>Bestandssysteem</b> — verdachte files, downloads</li>
+              <li><b>Firewall</b> regels — vreemde uitzonderingen?</li>
+            </ol>
+
+            <h4>Onderzoeksverslag invullen (Bijlage 2.1)</h4>
+            <ul>
+              <li><b>Aanleiding</b> — datalek gemeld via forum</li>
+              <li><b>Onderzoeksvragen</b> — de 4 hierboven</li>
+              <li><b>Bevindingen</b> — wat heb je gevonden + screenshots/bewijs</li>
+              <li><b>Kwetsbaarheden</b> + <b>risiconiveau</b> per stuk</li>
+              <li><b>Tijdlijn</b> — wanneer wat gebeurde</li>
+              <li><b>Impact</b> — wat is gelekt en hoeveel</li>
+              <li><b>Conclusie</b></li>
+              <li><b>Communicatiematrix</b> — wie informeren over wat</li>
+            </ul>
+
+            <h4>📧 Begeleidende e-mail (Bijlage 2.2) — MOET bevatten:</h4>
+            <p><b>a. Vervolgstappen om veiligheid op orde te krijgen:</b></p>
+            <ul>
+              <li>Isoleer SRV002 (uit netwerk halen)</li>
+              <li>Wachtwoorden van alle accounts wijzigen (incl. MySQL root)</li>
+              <li>Verwijder kwaadaardige software / RAT tools</li>
+              <li>Patch het systeem</li>
+              <li>Implementeer logging &amp; monitoring</li>
+              <li>Forensisch onderzoek (eventueel extern)</li>
+            </ul>
+            <p><b>b. Wettelijke verplichtingen — AVG/GDPR datalek:</b></p>
+            <ul>
+              <li><b>Binnen 72 uur</b> melden bij <b>Autoriteit Persoonsgegevens (AP)</b></li>
+              <li>Bij hoog risico: <b>betrokkenen informeren</b> (de patiënten)</li>
+              <li><b>Documenteren</b> van het incident (verplicht register datalekken)</li>
+              <li><b>Functionaris Gegevensbescherming</b> inschakelen indien aanwezig</li>
+              <li>Medische gegevens = <b>bijzondere persoonsgegevens</b> → extra zware verplichtingen</li>
+            </ul>
+
+            <h4>Communicatiematrix — wie informeren?</h4>
+            <table class="prose-table">
+              <thead><tr><th>Wie</th><th>Wat</th><th>Hoe</th></tr></thead>
+              <tbody>
+                <tr><td>Directie</td><td>Volledige situatie + vervolgstappen</td><td>E-mail + meeting</td></tr>
+                <tr><td>Securityofficer</td><td>Technisch detail</td><td>E-mail + onderzoeksverslag</td></tr>
+                <tr><td>Medewerkers</td><td>Voorzichtigheid, wachtwoorden wijzigen</td><td>E-mail/intern bericht</td></tr>
+                <tr><td>Betrokkenen (patiënten)</td><td>Welke data gelekt, wat te doen</td><td>Brief (verplicht bij hoog risico)</td></tr>
+                <tr><td>Autoriteit Persoonsgegevens</td><td>Officiële melding</td><td>Online formulier AP</td></tr>
+              </tbody>
+            </table>
+
+            <hr>
+
+            <h3>🔧 Server aanpassen (Opdracht 2.2) — concrete acties</h3>
+            <p>Op basis van Bijlage 2.3 Kwetsbaarheden (krijg je op papier). Verwacht onderwerpen:</p>
+
+            <h4>MySQL beveiligen</h4>
+            <ul>
+              <li><b>Root wachtwoord wijzigen:</b> <code>ALTER USER 'root'@'localhost' IDENTIFIED BY 'NieuwSterkWW!';</code></li>
+              <li><b>Anoniem account verwijderen:</b> <code>DROP USER ''@'localhost';</code></li>
+              <li><b>Remote root login uit:</b> zorg dat root alleen vanaf localhost mag</li>
+              <li><b>Test database verwijderen</b> als die er staat</li>
+              <li><code>mysql_secure_installation</code> draaien indien beschikbaar</li>
+            </ul>
+
+            <h4>RAT / verdachte tools</h4>
+            <ul>
+              <li><b>Check eerst</b> of root/RAT tools geïnstalleerd zijn (Programs and Features, Autoruns, Process Explorer)</li>
+              <li><b>Verwijder ze</b> via uninstaller + handmatig restanten</li>
+              <li><b>Daarna pas</b> zelf legitieme remote-access setup doen (als de opdracht dat vraagt)</li>
+              <li>Tip uit eerdere examens: kijk specifiek naar TeamViewer, AnyDesk, NetCat, ngrok, mRemoteNG</li>
+            </ul>
+
+            <h4>Administrator account</h4>
+            <ul>
+              <li><b>Lokale Administrator</b> uitschakelen of hernoemen</li>
+              <li>Wachtwoord wijzigen</li>
+              <li>Audit wie er admin rechten heeft</li>
+            </ul>
+
+            <h4>Algemene hardening</h4>
+            <ul>
+              <li>Windows Firewall aanzetten</li>
+              <li>Onnodige poorten sluiten</li>
+              <li>Windows Updates installeren</li>
+              <li>Defender / antivirus scannen</li>
+              <li>Onnodige services uitschakelen</li>
+            </ul>
+
+            <h4>Logboek (Bijlage 2.4)</h4>
+            <p>Voor <b>elke aanpassing</b> screenshot maken van:</p>
+            <ul>
+              <li><b>Voor</b> de aanpassing</li>
+              <li><b>Tijdens</b> de aanpassing (welke stap)</li>
+              <li><b>Na</b> de aanpassing (bewijs dat het is doorgevoerd)</li>
+            </ul>
+            <p>Per actie: tijd, wat gedaan, waarom, screenshot.</p>
+
+            <hr>
+
+            <h3>🧠 Security concepten — quick reference</h3>
+            <h4>CIA Triad</h4>
+            <ul>
+              <li><b>Confidentiality</b> — alleen bevoegden mogen erbij (datalek schendt dit)</li>
+              <li><b>Integrity</b> — data klopt en is niet gemanipuleerd</li>
+              <li><b>Availability</b> — systemen zijn beschikbaar wanneer nodig</li>
+            </ul>
+            <h4>AAA</h4>
+            <ul>
+              <li><b>Authentication</b> — wie ben je? (wachtwoord, MFA)</li>
+              <li><b>Authorization</b> — wat mag je? (rechten/rollen)</li>
+              <li><b>Accounting</b> — wat heb je gedaan? (logging/auditing)</li>
+            </ul>
+            <h4>Vragen die je kunt gebruiken in je analyse</h4>
+            <ul>
+              <li>Welk CIA-aspect wordt geschonden?</li>
+              <li>Welk AAA-aspect ontbreekt of faalt?</li>
+              <li>Wat is de kans × impact?</li>
+              <li>Welke wetgeving wordt overtreden (AVG)?</li>
+            </ul>
+
+            <hr>
+
+            <h3>📚 Bekende poorten — quick reference</h3>
+            <table class="prose-table">
+              <thead><tr><th>Poort</th><th>Service</th><th>Verdacht?</th></tr></thead>
+              <tbody>
+                <tr><td>22</td><td>SSH</td><td>Op Windows ongebruikelijk</td></tr>
+                <tr><td>80 / 443</td><td>HTTP / HTTPS</td><td>Normaal voor web</td></tr>
+                <tr><td>88</td><td>Kerberos</td><td>Normaal voor AD</td></tr>
+                <tr><td>389 / 636</td><td>LDAP / LDAPS</td><td>Normaal voor AD</td></tr>
+                <tr><td>445</td><td>SMB / File sharing</td><td>Normaal in netwerk</td></tr>
+                <tr><td>464</td><td>Kerberos password change</td><td>Normaal voor AD</td></tr>
+                <tr><td>3306</td><td>MySQL</td><td>OK op DB server, anders verdacht</td></tr>
+                <tr><td>3389</td><td>RDP</td><td>OK voor admin, beperk wel toegang</td></tr>
+                <tr><td>5985 / 5986</td><td>WinRM</td><td>Beheer</td></tr>
+                <tr><td>Hoge poorten (&gt;10000) random</td><td>Mogelijk RAT / reverse shell</td><td><b>Verdacht!</b></td></tr>
+              </tbody>
+            </table>
+
+            <hr>
+
+            <h3>✅ Eindchecklist voor inleveren</h3>
+            <p><b>Opdracht 1:</b></p>
+            <ul class="checklist">
+              <li>Auditrapport volledig ingevuld</li>
+              <li>Bevindingen onderbouwd met scan-resultaten</li>
+              <li>Risico's geclassificeerd (hoog/middel/laag)</li>
+              <li>Adviezen concreet &amp; haalbaar</li>
+              <li>Conclusie schrijft de kern samen</li>
+            </ul>
+            <p><b>Opdracht 2:</b></p>
+            <ul class="checklist">
+              <li>Onderzoeksverslag: alle 4 directie-vragen beantwoord</li>
+              <li>Communicatiematrix ingevuld</li>
+              <li>E-mail: vervolgstappen + AVG verplichtingen genoemd</li>
+              <li>Server aangepast (MySQL wachtwoord, RAT verwijderd, etc.)</li>
+              <li>Logboek met screenshots voor elke aanpassing</li>
+              <li>Tijdlijn van incidenten gedocumenteerd</li>
+            </ul>
+
+            <hr>
+
+            <h3>🎯 Mindset tips</h3>
+            <ol>
+              <li><b>Bevindingen ≠ adviezen</b> — eerst beschrijf je wat je vindt, dan apart wat je adviseert</li>
+              <li><b>Onderbouw alles</b> — "het systeem is onveilig" zegt niets. Wel: "Windows Firewall staat uit (gezien in Control Panel), waardoor inkomend verkeer niet wordt gefilterd, risiconiveau HOOG"</li>
+              <li><b>AVG noemen waar relevant</b> — medische gegevens = bijzondere persoonsgegevens</li>
+              <li><b>Screenshots opslaan</b> als bewijs — niet alleen voor logboek, ook bij audit handig</li>
+              <li><b>Maak het kort maar volledig</b> — kwaliteit &gt; kwantiteit</li>
+              <li><b>Tijd in de gaten</b> — zet timer per fase</li>
+            </ol>
+          </article>
+
+          <!-- ZELFDE INHOUD VOOR VERSIE B -->
+          <article class="prose version-b">
+            <h3>⏰ Tijdmanagement (6 uur totaal)</h3>
+            <table class="prose-table">
+              <thead>
+                <tr><th>Opdracht</th><th>Tijd</th><th>Wat lever je in</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><b>Opdracht 1 (W1)</b></td><td>180 min</td><td>Auditrapport</td></tr>
+                <tr><td><b>Opdracht 2 (W2)</b></td><td>180 min</td><td>Onderzoeksverslag + E-mail + Aangepaste server + Logboek</td></tr>
+              </tbody>
+            </table>
+
+            <p><b>Verdeel binnen Opdracht 1:</b></p>
+            <ul>
+              <li>30 min scans uitvoeren (Nmap, MBSA, etc.)</li>
+              <li>30 min interviews + firewall-log doorlezen</li>
+              <li>30 min analyseren + risico's inschatten</li>
+              <li>90 min auditrapport schrijven</li>
+            </ul>
+
+            <p><b>Verdeel binnen Opdracht 2:</b></p>
+            <ul>
+              <li>45 min onderzoek SRV002 (logs, MySQL, processen)</li>
+              <li>45 min onderzoeksverslag invullen</li>
+              <li>30 min e-mail schrijven</li>
+              <li>60 min server aanpassen + logboek met screenshots</li>
+            </ul>
+
+            <hr>
+
+            <h3>🧰 Tools cheatsheet (ToolBox op desktop SRV001)</h3>
+            <table class="prose-table">
+              <thead><tr><th>Tool</th><th>Waarvoor gebruiken</th></tr></thead>
+              <tbody>
+                <tr><td><b>Nmap</b></td><td>Open poorten scannen — welke services draaien? Welke zijn vreemd?</td></tr>
+                <tr><td><b>Microsoft Baseline Security Analyzer (MBSA)</b></td><td>Windows config check, missing updates, zwakke wachtwoordbeleid</td></tr>
+                <tr><td><b>Sysinternals Suite</b> (Process Explorer, Autoruns, TCPView)</td><td>Verdachte processen, auto-start programs, actieve netwerkverbindingen</td></tr>
+                <tr><td><b>Event Viewer</b></td><td>Logins, security events, fouten — zoek op rare tijdstippen</td></tr>
+                <tr><td><b>Malwarebytes</b></td><td>Scan op malware/RATs</td></tr>
+                <tr><td><b>Wireshark</b></td><td>Netwerkverkeer analyseren (als nodig)</td></tr>
+              </tbody>
+            </table>
+            <p><b>Praktisch:</b> start altijd met Nmap (overzicht) + MBSA (config) + Event Viewer (recente activiteit). Daarna gericht inzoomen.</p>
+
+            <hr>
+
+            <h3>📋 Opdracht 1 (W1) — Audit van SRV001</h3>
+            <h4>Stappenplan</h4>
+            <ol>
+              <li><b>Inloggen</b> als administrator op SRV001</li>
+              <li><b>Tools openen</b> uit ToolBox folder</li>
+              <li><b>Nmap</b> op localhost/SRV001 → noteer open poorten</li>
+              <li><b>MBSA</b> scan → noteer security misconfiguraties</li>
+              <li><b>Event Viewer</b> → security log → verdachte logins?</li>
+              <li><b>Firewall-log</b> op bureaublad → vreemde verbindingen?</li>
+              <li><b>Bestandssysteem</b> check → Downloads folder, share folders, desktop</li>
+              <li><b>Interviews</b> (Bijlage 1.1) doorlezen — wat zeggen balie/backoffice/apotheker?</li>
+              <li><b>Combineer</b> technische + menselijke bevindingen</li>
+              <li><b>Auditrapport</b> invullen (Bijlage 1.2)</li>
+            </ol>
+
+            <h4>Waar je naar kijkt — categorieën</h4>
+            <p><b>🖥️ Server (SRV001) — technische scan</b></p>
+            <ul>
+              <li>Open poorten (let op rare zoals 464, 636 — wat is hun functie?)</li>
+              <li>Verouderde updates / patches</li>
+              <li>Firewall status (uit/aan)</li>
+              <li>Gedeelde mappen — wie heeft toegang?</li>
+              <li>Verdachte bestanden in Downloads of op desktop</li>
+              <li>Onbekende auto-start programma's</li>
+              <li>Wachtwoordbeleid (te zwak?)</li>
+              <li>Verbindingen met externe netwerken in firewall-log</li>
+            </ul>
+
+            <p><b>👥 Mens &amp; beleid (uit interviews)</b></p>
+            <ul>
+              <li>Computers niet vergrendelen</li>
+              <li>Wachtwoorden onder toetsenbord</li>
+              <li>USB-sticks gedeeld</li>
+              <li>Geen logboek bij sluiting</li>
+              <li>Geen beveiligingscamera's</li>
+              <li>Geen beveiligingsbeleid</li>
+              <li>Papieren met persoonsgegevens in prullenbak</li>
+              <li>Geen autorisatieniveaus (iedereen kan alles)</li>
+              <li>Externe IT'er (man van medewerker) — wie heeft toegang?</li>
+            </ul>
+
+            <h4>Risicobeoordeling — gebruik een matrix</h4>
+            <p>Per bevinding bepaal je: <b>Kans × Impact = Risico</b></p>
+            <table class="prose-table">
+              <thead><tr><th>Niveau</th><th>Wanneer?</th></tr></thead>
+              <tbody>
+                <tr><td><b>Hoog</b></td><td>Direct gevaar voor patiëntgegevens (AVG-overtreding mogelijk)</td></tr>
+                <tr><td><b>Middel</b></td><td>Indirect risico, vereist combinatie met andere factor</td></tr>
+                <tr><td><b>Laag</b></td><td>Hygiëne-issue, geen directe dreiging</td></tr>
+              </tbody>
+            </table>
+            <p>Voorbeelden:</p>
+            <ul>
+              <li>Wachtwoord onder toetsenbord + iedereen kan binnenlopen = <b>HOOG</b></li>
+              <li>Verouderde updates = <b>HOOG</b> (bekende exploits)</li>
+              <li>Geen logboek sluiting = <b>MIDDEL</b></li>
+            </ul>
+
+            <h4>Auditrapport structuur (Bijlage 1.2)</h4>
+            <ol>
+              <li><b>Inleiding</b> — wie, wat, wanneer, doel audit</li>
+              <li><b>Scope</b> — wat is gecontroleerd (SRV001 + interviews)</li>
+              <li><b>Methodiek</b> — welke tools en methoden gebruikt</li>
+              <li><b>Bevindingen</b> — per categorie (server / netwerk / mens / beleid)</li>
+              <li><b>Risicoanalyse</b> — matrix met risiconiveaus</li>
+              <li><b>Advies / verbetervoorstellen</b> — concreet & haalbaar</li>
+              <li><b>Conclusie</b></li>
+            </ol>
+
+            <h4>⚠️ Tips voor het advies</h4>
+            <ul>
+              <li>Maak adviezen <b>SMART</b>: specifiek, meetbaar, haalbaar</li>
+              <li>Niet "verbeter de beveiliging" maar "implementeer wachtwoordbeleid: min. 12 tekens, 90 dagen geldig, MFA verplicht"</li>
+              <li>Per bevinding 1 concreet advies</li>
+              <li>Prioriteer: hoog risico eerst</li>
+            </ul>
+
+            <hr>
+
+            <h3>🚨 Opdracht 2 (W2) — Incident response SRV002 (MySQL datalek)</h3>
+            <h4>De 4 vragen die de directie wil beantwoord hebben</h4>
+            <table class="prose-table">
+              <thead><tr><th>Vraag</th><th>Hoe vinden?</th></tr></thead>
+              <tbody>
+                <tr><td><b>a. Hoe kon het gebeuren?</b></td><td>MySQL config, gebruikersrechten, open poorten, processen, autoruns</td></tr>
+                <tr><td><b>b. Wanneer is het gebeurd?</b></td><td>MySQL logs, Event Viewer security log, file timestamps</td></tr>
+                <tr><td><b>c. Welke informatie?</b></td><td>Database inhoud bekijken — welke tabellen, welke velden</td></tr>
+                <tr><td><b>d. Hoeveel buitgemaakt?</b></td><td>Aantal records in tabellen, log van queries</td></tr>
+              </tbody>
+            </table>
+
+            <h4>Onderzoek op SRV002 — stappenplan</h4>
+            <ol>
+              <li><b>Login</b> via RDP</li>
+              <li><b>Verdachte processen</b> check (Task Manager / Process Explorer)</li>
+              <li><b>MySQL</b> openen — welke databases, welke tabellen, hoeveel records</li>
+              <li><b>MySQL logs</b> check (<code>C:\ProgramData\MySQL\...\Data\*.err</code> of <code>query.log</code>)</li>
+              <li><b>Event Viewer</b> → Security log → recente logins</li>
+              <li><b>Open poorten</b> check (<code>netstat -an</code> of TCPView)</li>
+              <li><b>Geïnstalleerde programma's</b> check — staat er een RAT? (TeamViewer, AnyDesk, ngrok, NetCat?)</li>
+              <li><b>Autoruns</b> — wat start er automatisch?</li>
+              <li><b>Bestandssysteem</b> — verdachte files, downloads</li>
+              <li><b>Firewall</b> regels — vreemde uitzonderingen?</li>
+            </ol>
+
+            <h4>Onderzoeksverslag invullen (Bijlage 2.1)</h4>
+            <ul>
+              <li><b>Aanleiding</b> — datalek gemeld via forum</li>
+              <li><b>Onderzoeksvragen</b> — de 4 hierboven</li>
+              <li><b>Bevindingen</b> — wat heb je gevonden + screenshots/bewijs</li>
+              <li><b>Kwetsbaarheden</b> + <b>risiconiveau</b> per stuk</li>
+              <li><b>Tijdlijn</b> — wanneer wat gebeurde</li>
+              <li><b>Impact</b> — wat is gelekt en hoeveel</li>
+              <li><b>Conclusie</b></li>
+              <li><b>Communicatiematrix</b> — wie informeren over wat</li>
+            </ul>
+
+            <h4>📧 Begeleidende e-mail (Bijlage 2.2) — MOET bevatten:</h4>
+            <p><b>a. Vervolgstappen om veiligheid op orde te krijgen:</b></p>
+            <ul>
+              <li>Isoleer SRV002 (uit netwerk halen)</li>
+              <li>Wachtwoorden van alle accounts wijzigen (incl. MySQL root)</li>
+              <li>Verwijder kwaadaardige software / RAT tools</li>
+              <li>Patch het systeem</li>
+              <li>Implementeer logging &amp; monitoring</li>
+              <li>Forensisch onderzoek (eventueel extern)</li>
+            </ul>
+            <p><b>b. Wettelijke verplichtingen — AVG/GDPR datalek:</b></p>
+            <ul>
+              <li><b>Binnen 72 uur</b> melden bij <b>Autoriteit Persoonsgegevens (AP)</b></li>
+              <li>Bij hoog risico: <b>betrokkenen informeren</b> (de patiënten)</li>
+              <li><b>Documenteren</b> van het incident (verplicht register datalekken)</li>
+              <li><b>Functionaris Gegevensbescherming</b> inschakelen indien aanwezig</li>
+              <li>Medische gegevens = <b>bijzondere persoonsgegevens</b> → extra zware verplichtingen</li>
+            </ul>
+
+            <h4>Communicatiematrix — wie informeren?</h4>
+            <table class="prose-table">
+              <thead><tr><th>Wie</th><th>Wat</th><th>Hoe</th></tr></thead>
+              <tbody>
+                <tr><td>Directie</td><td>Volledige situatie + vervolgstappen</td><td>E-mail + meeting</td></tr>
+                <tr><td>Securityofficer</td><td>Technisch detail</td><td>E-mail + onderzoeksverslag</td></tr>
+                <tr><td>Medewerkers</td><td>Voorzichtigheid, wachtwoorden wijzigen</td><td>E-mail/intern bericht</td></tr>
+                <tr><td>Betrokkenen (patiënten)</td><td>Welke data gelekt, wat te doen</td><td>Brief (verplicht bij hoog risico)</td></tr>
+                <tr><td>Autoriteit Persoonsgegevens</td><td>Officiële melding</td><td>Online formulier AP</td></tr>
+              </tbody>
+            </table>
+
+            <hr>
+
+            <h3>🔧 Server aanpassen (Opdracht 2.2) — concrete acties</h3>
+            <p>Op basis van Bijlage 2.3 Kwetsbaarheden (krijg je op papier). Verwacht onderwerpen:</p>
+
+            <h4>MySQL beveiligen</h4>
+            <ul>
+              <li><b>Root wachtwoord wijzigen:</b> <code>ALTER USER 'root'@'localhost' IDENTIFIED BY 'NieuwSterkWW!';</code></li>
+              <li><b>Anoniem account verwijderen:</b> <code>DROP USER ''@'localhost';</code></li>
+              <li><b>Remote root login uit:</b> zorg dat root alleen vanaf localhost mag</li>
+              <li><b>Test database verwijderen</b> als die er staat</li>
+              <li><code>mysql_secure_installation</code> draaien indien beschikbaar</li>
+            </ul>
+
+            <h4>RAT / verdachte tools</h4>
+            <ul>
+              <li><b>Check eerst</b> of root/RAT tools geïnstalleerd zijn (Programs and Features, Autoruns, Process Explorer)</li>
+              <li><b>Verwijder ze</b> via uninstaller + handmatig restanten</li>
+              <li><b>Daarna pas</b> zelf legitieme remote-access setup doen (als de opdracht dat vraagt)</li>
+              <li>Tip uit eerdere examens: kijk specifiek naar TeamViewer, AnyDesk, NetCat, ngrok, mRemoteNG</li>
+            </ul>
+
+            <h4>Administrator account</h4>
+            <ul>
+              <li><b>Lokale Administrator</b> uitschakelen of hernoemen</li>
+              <li>Wachtwoord wijzigen</li>
+              <li>Audit wie er admin rechten heeft</li>
+            </ul>
+
+            <h4>Algemene hardening</h4>
+            <ul>
+              <li>Windows Firewall aanzetten</li>
+              <li>Onnodige poorten sluiten</li>
+              <li>Windows Updates installeren</li>
+              <li>Defender / antivirus scannen</li>
+              <li>Onnodige services uitschakelen</li>
+            </ul>
+
+            <h4>Logboek (Bijlage 2.4)</h4>
+            <p>Voor <b>elke aanpassing</b> screenshot maken van:</p>
+            <ul>
+              <li><b>Voor</b> de aanpassing</li>
+              <li><b>Tijdens</b> de aanpassing (welke stap)</li>
+              <li><b>Na</b> de aanpassing (bewijs dat het is doorgevoerd)</li>
+            </ul>
+            <p>Per actie: tijd, wat gedaan, waarom, screenshot.</p>
+
+            <hr>
+
+            <h3>🧠 Security concepten — quick reference</h3>
+            <h4>CIA Triad</h4>
+            <ul>
+              <li><b>Confidentiality</b> — alleen bevoegden mogen erbij (datalek schendt dit)</li>
+              <li><b>Integrity</b> — data klopt en is niet gemanipuleerd</li>
+              <li><b>Availability</b> — systemen zijn beschikbaar wanneer nodig</li>
+            </ul>
+            <h4>AAA</h4>
+            <ul>
+              <li><b>Authentication</b> — wie ben je? (wachtwoord, MFA)</li>
+              <li><b>Authorization</b> — wat mag je? (rechten/rollen)</li>
+              <li><b>Accounting</b> — wat heb je gedaan? (logging/auditing)</li>
+            </ul>
+            <h4>Vragen die je kunt gebruiken in je analyse</h4>
+            <ul>
+              <li>Welk CIA-aspect wordt geschonden?</li>
+              <li>Welk AAA-aspect ontbreekt of faalt?</li>
+              <li>Wat is de kans × impact?</li>
+              <li>Welke wetgeving wordt overtreden (AVG)?</li>
+            </ul>
+
+            <hr>
+
+            <h3>📚 Bekende poorten — quick reference</h3>
+            <table class="prose-table">
+              <thead><tr><th>Poort</th><th>Service</th><th>Verdacht?</th></tr></thead>
+              <tbody>
+                <tr><td>22</td><td>SSH</td><td>Op Windows ongebruikelijk</td></tr>
+                <tr><td>80 / 443</td><td>HTTP / HTTPS</td><td>Normaal voor web</td></tr>
+                <tr><td>88</td><td>Kerberos</td><td>Normaal voor AD</td></tr>
+                <tr><td>389 / 636</td><td>LDAP / LDAPS</td><td>Normaal voor AD</td></tr>
+                <tr><td>445</td><td>SMB / File sharing</td><td>Normaal in netwerk</td></tr>
+                <tr><td>464</td><td>Kerberos password change</td><td>Normaal voor AD</td></tr>
+                <tr><td>3306</td><td>MySQL</td><td>OK op DB server, anders verdacht</td></tr>
+                <tr><td>3389</td><td>RDP</td><td>OK voor admin, beperk wel toegang</td></tr>
+                <tr><td>5985 / 5986</td><td>WinRM</td><td>Beheer</td></tr>
+                <tr><td>Hoge poorten (&gt;10000) random</td><td>Mogelijk RAT / reverse shell</td><td><b>Verdacht!</b></td></tr>
+              </tbody>
+            </table>
+
+            <hr>
+
+            <h3>✅ Eindchecklist voor inleveren</h3>
+            <p><b>Opdracht 1:</b></p>
+            <ul class="checklist">
+              <li>Auditrapport volledig ingevuld</li>
+              <li>Bevindingen onderbouwd met scan-resultaten</li>
+              <li>Risico's geclassificeerd (hoog/middel/laag)</li>
+              <li>Adviezen concreet &amp; haalbaar</li>
+              <li>Conclusie schrijft de kern samen</li>
+            </ul>
+            <p><b>Opdracht 2:</b></p>
+            <ul class="checklist">
+              <li>Onderzoeksverslag: alle 4 directie-vragen beantwoord</li>
+              <li>Communicatiematrix ingevuld</li>
+              <li>E-mail: vervolgstappen + AVG verplichtingen genoemd</li>
+              <li>Server aangepast (MySQL wachtwoord, RAT verwijderd, etc.)</li>
+              <li>Logboek met screenshots voor elke aanpassing</li>
+              <li>Tijdlijn van incidenten gedocumenteerd</li>
+            </ul>
+
+            <hr>
+
+            <h3>🎯 Mindset tips</h3>
+            <ol>
+              <li><b>Bevindingen ≠ adviezen</b> — eerst beschrijf je wat je vindt, dan apart wat je adviseert</li>
+              <li><b>Onderbouw alles</b> — "het systeem is onveilig" zegt niets. Wel: "Windows Firewall staat uit (gezien in Control Panel), waardoor inkomend verkeer niet wordt gefilterd, risiconiveau HOOG"</li>
+              <li><b>AVG noemen waar relevant</b> — medische gegevens = bijzondere persoonsgegevens</li>
+              <li><b>Screenshots opslaan</b> als bewijs — niet alleen voor logboek, ook bij audit handig</li>
+              <li><b>Maak het kort maar volledig</b> — kwaliteit &gt; kwantiteit</li>
+              <li><b>Tijd in de gaten</b> — zet timer per fase</li>
+            </ol>
+          </article>
         </div>
 
         <div id="onderwerp1" class="tab-content active">
