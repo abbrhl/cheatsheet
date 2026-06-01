@@ -897,13 +897,113 @@ SHOW VARIABLES LIKE 'general_log%';</pre>
                 ⬇ Download Bijlage 1.2 (.docx)
               </a>
             </p>
+
             <hr>
-            <h4>Hoe te gebruiken</h4>
+
+            <h3>Inhoud van het document</h3>
+
+            <p><b>Datum:</b> 31-1-2024<br>
+            <b>Auteur:</b> Tijmen Schmidt</p>
+
+            <h4>Opdrachtgever</h4>
+            <p>Securityofficer AmeRijck vakantiepark</p>
+
+            <h4>Managementsamenvatting</h4>
+            <p><i>[Geef hier in het kort een toelichting voor de directie met de aanleiding voor de audit, de gevonden kwetsbaarheden, de ernst met de bijbehorende adviezen.]</i></p>
+
+            <p><b>T.A.V. Directie:</b><br>
+            Om te kunnen voldoen aan de eisen die verplicht zijn voor een medische instantie, moet apotheek AmeRijck jaarlijks een controle laten doen van hun machines.</p>
+            <p>Deze auditrapport geeft weer waar de zwakheden zijn, en wat we hebben gevonden.</p>
+
+            <h4>Overzicht onderzoek</h4>
+            <p><i>[Een toelichting op wat onderzocht is en op welke manier.]</i></p>
+            <p>Het onderzoek hebben we met de tool <b>Microsoft Baseline Security Analyzer</b> gedaan. Daarnaast hebben we ook interviews uitgelezen van collega's, zodat we een betere inschatting kunnen maken van de security zowel fysiek als achter de schermen. Ook is de tool <b>SysinternalsSuite</b> gebruikt zodat er poorten gescand kunnen worden voor meer nader onderzoek.</p>
+
+            <p><b>Interview baliemedewerker:</b> Vaak vergeten medewerkers de computer op slot te doen als ze even opstaan, zoals het halen van medicijnen. Ook is er een USB stick in de computer gestoken voor het printen van een bestand, van een vertegenwoordiger. Wat ook niet juist is, is dat de server een rechtstreekse verbinding heeft met het internet.</p>
+
+            <p><b>Interview Backofficemedewerker:</b> Meerdere mensen [gebruiken] de computer van de apotheker. Het huidige wachtwoord ligt onder het toetsenbord bij de werkplek. Ze geven aan dat het een moeilijk te onthouden wachtwoord is. Elke gebruiker kan bij alle mappen in de Windows verkenner. En nu komt het, om gegevens in de database te importeren, hebben ze als eerste stap dat ze alles in Excel aanpassen waarna ze het daarna importeren in de database. Ook blijven de computers en de server onbeveiligd en ontgrendeld zonder wachtwoord.</p>
+
+            <p><b>Interview apotheker:</b> Er zijn nu 4 fulltimers en 2 parttimers in dienst, zegt de baas. Hij sluit niet altijd het pand zelf, omdat hij niet elke dag werkt. Dat doen sommige vaste medewerkers soms ook, het sluiten van het pand. Die hebben immers een sleutel. Niemand schrijft in een logboek wie heeft geopend of afgesloten. Papieren van dokters en ziekenhuizen worden in de database gezet en daarna belanden ze zonder het te vernietigen in de prullenbak. Er zijn geen camera's in en buiten de apotheek waardoor de papieren onbeveiligd in de papierbak liggen. En er is ook geen duidelijk beveiligingsbeleid. Als er iets onderhouden moet worden, dan doet de man van een medewerker de ITC klussen.</p>
+
+            <p><b>Server:</b> Deze server heeft een paar open poorten, <b>464</b> en <b>636</b>. Vanuit de informatie die ik heb blijkt dat niemand weet waar ze voor bedoeld zijn. Ook zijn er een aantal mappen zonder wachtwoord waar iedereen in kan kijken. De updates lopen achter ook constateer ik dat er problemen ondervinden met de beveiliging, uitgevoerd met de tool. Ook staat de Firewall van Windows uit. In de Firewall Log snippet zijn er verbindingen met andere IP-adressen te zien.</p>
+
+            <p><b>Eigen bevindingen:</b><br>
+            In de downloads map zijn wat vreemde dingen gevonden:</p>
             <ul>
-              <li>Open het bestand in Word</li>
-              <li>Vul de secties in volgens het stappenplan uit de Claude tab (STAP 7)</li>
-              <li>Voeg screenshots toe als bewijs</li>
-              <li>Sla regelmatig op tussen het werken door</li>
+              <li><code>Nicepics.txt</code></li>
+              <li>Serverachtergronden</li>
+              <li>Installatie bestanden zoals een <code>Test ISO.iso</code></li>
+              <li><code>Office.com</code> snelkoppeling op de serverdesktop is vreemd</li>
+            </ul>
+            <p>In de Share-map "Algemeen bestanden" staat een telefoonlijst en een lijst van personeelsleden met alle gevoelige persoonlijke informatie, wat niet echt veilig lijkt.</p>
+
+            <h4>Onderbouwing keuze onderzoekshulpmiddelen</h4>
+            <p><i>[Voor welke tools is gekozen en waarom.]</i></p>
+            <p><b>Tool Microsoft Baseline Security Analyzer:</b> Deze tool hebben we gekozen omdat er efficiënt gescand kan worden op kwetsbaarheden.</p>
+            <p>Ook is de tool <b>SysinternalsSuite</b> gebruikt zodat er poorten gescand kunnen worden.</p>
+
+            <h4>Gedetailleerde resultaten</h4>
+            <p><i>[Voor elk gevonden issue]</i></p>
+
+            <p><b>1. Automatic updates system services is not running.</b><br>
+            Deze service staat uitgeschakeld wat betekent dat dit een grote issue is. De server is hierdoor niet meer beschermd tegen kwaadwillende virussen, of andere malware/ellende. Als dit niet snel aangezet wordt is de impact groot, aangezien het bedrijf dan plat ligt.</p>
+
+            <p><b>2. Incomplete Updates</b><br>
+            De conclusie is dat deze update niet compleet is. Wat betekent dat de update niet volledig is afgerond. De impact kan zijn dat de nieuwe updates niet doorgevoerd worden.</p>
+
+            <p><b>3. Meer dan 2 Administrators gevonden op server 1.</b><br>
+            Er is een grotere kans dat er gegevens van het admin account worden gevonden, of gehackt. Als dat gebeurt kan je een catastrofale beschadigingen krijgen aan het systeem of de server omdat het hier gaat om een administrator account.</p>
+
+            <p><b>4. 12 van de 140 gebruikers hebben wachtwoorden die niet kunnen verlopen.</b><br>
+            Een lokaal account met de instelling "Wachtwoord verloopt nooit" overschrijft de instelling Maximumleeftijd wachtwoord in het beleid Wachtwoord in Groepsbeleid, waardoor een gebruiker voor altijd hetzelfde wachtwoord kan behouden. Als dit wachtwoord gevonden wordt, en er is geen multi-factor authenticatie, dan kan dit een grote issue zijn. Het probleem hierbij is dat er data gestolen kan worden op lange termijn. Of juist een andere aanval op het netwerk.</p>
+
+            <p><b>5. Firewall staat helemaal uit</b><br>
+            Windows Firewall is software die bescherming biedt voor computers door te bepalen welke informatie van en naar het internet of andere computers in een netwerk wordt gecommuniceerd. Op de gescande server is Windows Firewall niet ingeschakeld voor alle netwerkverbindingen. Als je Windows Firewall uitschakelt, kan er op je computer (en uw netwerk, als u dat hebt) kwetsbaarder worden voor schade door virussen of andere aanvallen van buitenaf, zoals hackers.</p>
+
+            <p><b>6. Auditing staat disabled</b><br>
+            Auditing staat disabled, wat betekent dat je niet kan zien of iemand in- of uitlogt.</p>
+
+            <p><b>7. Kan de security CAB file niet laden</b><br>
+            Auditing staat disabled, wat betekent dat je niet kan zien of iemand in- of uitlogt.</p>
+
+            <p><b>8. Geen beveiligingscamera's binnen en buiten het pand</b><br>
+            De gemaakte interviews zijn het bewijs dat dit niet in gebruik is. Geen camerabeveiliging betekent dat er data verloren kan gaan van patiënten, rekeningen, wachtwoorden etc. Het gaat dan voornamelijk om de papierbak buiten.</p>
+
+            <p><b>9. Wachtwoord op een briefje onder het toetsenbord</b><br>
+            De gemaakte interviews zijn het bewijs dat dit niet in gebruik is. Zo omgaan met wachtwoorden kan leiden tot gegevensverlies, en/of computervredebreuk.</p>
+
+            <h4>Conclusies</h4>
+            <p><i>[Beschrijf jouw conclusies. Neem ook een matrix met kans en impact op van de gevonden resultaten. Nummer de resultaten en zet ze in het schema.]</i></p>
+
+            <p><b>Risicomatrix</b></p>
+            <table class="prose-table">
+              <thead>
+                <tr><th>Kans \ Impact</th><th>Laag</th><th>Middel</th><th>Hoog</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><b>Hoog</b></td><td>8</td><td>5</td><td>1</td></tr>
+                <tr><td><b>Middel</b></td><td>2</td><td>3</td><td>6</td></tr>
+                <tr><td><b>Laag</b></td><td>9</td><td>7</td><td>4</td></tr>
+              </tbody>
+            </table>
+
+            <h4>Verbetervoorstel</h4>
+            <p><i>[Geef voor elk van de kwetsbaarheden advies op basis van jouw conclusies om de veiligheid te verbeteren. Gebruik gerust het internet, maar vermeld wel een gevonden bron en beschrijf altijd de gevonden informatie in eigen woorden.]</i></p>
+
+            <ul>
+              <li><b>Automatische updates:</b> Zorg ervoor dat de automatische updates zijn ingeschakeld om de nieuwste beveiligingsupdates te ontvangen.</li>
+              <li><b>Incomplete updates:</b> Installeer de ontbrekende updates om de beveiliging van uw systeem te verbeteren.</li>
+              <li><b>Meer dan 2 administrators gevonden op server 1:</b> Beperk het aantal beheerders op de server tot een minimum. Dit vermindert het risico op ongeautoriseerde toegang tot de server.</li>
+              <li><b>Wachtwoorden die niet kunnen verlopen:</b> Zorg ervoor dat alle gebruikers wachtwoorden hebben die kunnen verlopen. Dit vermindert het risico op ongeautoriseerde toegang tot het systeem.</li>
+              <li><b>Firewall staat helemaal uit:</b> Schakel de firewall in om uw systeem te beschermen tegen ongeautoriseerde toegang.</li>
+              <li><b>Auditing is disabled:</b> Schakel auditing in om de activiteiten op het systeem te controleren.</li>
+              <li><b>Kan de security CAB file niet laden:</b> Controleer of de security CAB file beschikbaar is en of deze correct is geconfigureerd.</li>
+            </ul>
+
+            <h4>Bronnen</h4>
+            <ul>
+              <li>Windows wilt niet updaten: <a href="https://www.pc-tips.info/tips/windows-tips/windows-10-update-20h2-wil-niet-installeren/" target="_blank" rel="noopener">pc-tips.info</a></li>
+              <li><a href="https://learn.microsoft.com/nl-nl/troubleshoot/windows-client/deployment/windows-update-issues-troubleshooting/" target="_blank" rel="noopener">Microsoft Windows Update Troubleshooting</a></li>
             </ul>
           </article>
         </div>
