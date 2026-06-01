@@ -824,6 +824,45 @@ h3.pink   { color: #c0397a; }
   display: block;
 }
 
+/* EMAIL BOX */
+.email-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1rem 0;
+  max-width: 720px;
+}
+
+.email-header {
+  background: rgba(139,92,246,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  color: #cbd5e0;
+}
+
+.email-header > div {
+  padding: 0.2rem 0;
+}
+
+.email-header b {
+  color: #a78bfa;
+  display: inline-block;
+  min-width: 90px;
+}
+
+.email-body {
+  padding: 1.5rem;
+  color: #e2e8f0;
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+
+.email-body p {
+  margin: 0.7rem 0;
+}
+
 /* TABLE THUMBNAILS */
 .thumb {
   max-width: 120px;
