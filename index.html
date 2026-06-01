@@ -107,10 +107,111 @@
           <button class="tab-btn" onclick="openTab(event, 'onderwerp4')">
             <span class="tab-icon">🌍</span> Onderwerp 4
           </button>
+          <button class="tab-btn" onclick="openTab(event, 'claude')">
+            <span class="tab-icon">🤖</span> Claude
+          </button>
         </div>
       </nav>
 
       <main class="portal-main">
+
+        <!-- CLAUDE EXAM TAB -->
+        <div id="claude" class="tab-content">
+          <div class="content-header">
+            <h2>P2-K2 Examen — Apotheek AmeRijck</h2>
+            <div class="content-stats">
+              <span>Exam Prep</span>
+              <span class="dot">•</span>
+              <span>Audit & Incident Response</span>
+            </div>
+          </div>
+
+          <div class="grid-layout">
+            <!-- VERSION A: DETAILED CONTENT -->
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>⏰ Tijdmanagement & Tools</h3>
+              <p>Verdeling van de 6 uur durende sessie:</p>
+              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
+                <li><b>W1 (Audit):</b> 180 min (Scans, Interviews, Rapportage)</li>
+                <li><b>W2 (Incident):</b> 180 min (Onderzoek, Mail, Hardening)</li>
+              </ul>
+              <p style="margin-top: 1rem;"><b>Tools:</b> Nmap, MBSA, Sysinternals, Event Viewer, Malwarebytes.</p>
+              <div class="card-footer">
+                <button class="card-btn">Open Full Timeline</button>
+              </div>
+            </div>
+
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>📋 Opdracht 1: Audit SRV001</h3>
+              <p>Focus op technische scans en menselijk gedrag. Gebruik de risicomatrix (Kans x Impact).</p>
+              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
+                <li>Check open poorten (464, 636)</li>
+                <li>Interviews: wachtwoorden onder toetsenbord, geen lock-beleid</li>
+                <li>Advies moet <b>SMART</b> zijn</li>
+              </ul>
+              <div class="card-footer">
+                <button class="card-btn">Audit Checklist</button>
+              </div>
+            </div>
+
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>🚨 Opdracht 2: Incident Response SRV002</h3>
+              <p>Beantwoord de 4 directie-vragen: Hoe, Wanneer, Welke info, Hoeveel buit?</p>
+              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
+                <li>Onderzoek MySQL logs en Event Viewer</li>
+                <li>Meld datalek binnen 72u bij AP (AVG/GDPR)</li>
+                <li>Hardening: Root wachtwoord, verwijder RAT (AnyDesk/TeamViewer)</li>
+              </ul>
+              <div class="card-footer">
+                <button class="card-btn">Technical Procedures</button>
+              </div>
+            </div>
+
+            <div class="glass-card version-a">
+              <div class="card-tag">Full Content</div>
+              <h3>✅ Eindchecklist</h3>
+              <p>Zorg dat je alle bijlagen (1.2, 2.1, 2.2, 2.4) volledig hebt ingevuld met screenshots (Voor, Tijdens, Na).</p>
+              <div class="card-footer">
+                <button class="card-btn">Final Validation</button>
+              </div>
+            </div>
+
+            <!-- VERSION B: ESSENTIAL CONTENT -->
+            <div class="glass-card version-b">
+              <div class="card-tag secondary">Essential</div>
+              <h3>🚀 Snelstart Gids</h3>
+              <p>Focus op de hoogste risico's:</p>
+              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
+                <li>Start met Nmap & MBSA</li>
+                <li>Incident: Isoleer server, wijzig WW, verwijder RAT</li>
+                <li>Meld datalek direct (AVG 72u)</li>
+              </ul>
+            </div>
+
+            <div class="glass-card version-b">
+              <div class="card-tag secondary">Essential</div>
+              <h3>🔍 Kritieke Poorten</h3>
+              <p>Let op deze poorten tijdens scans:</p>
+              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
+                <li><b>3306:</b> MySQL (Target)</li>
+                <li><b>3389:</b> RDP (Toegang)</li>
+                <li><b>>10000:</b> Mogelijk RAT/Backdoor</li>
+              </ul>
+            </div>
+
+            <div class="glass-card version-b">
+              <div class="card-tag secondary">Essential</div>
+              <h3>📧 Rapporteren</h3>
+              <ul style="color: #94a3b8; font-size: 0.9rem; margin-left: 1rem;">
+                <li>Audit: Altijd SMART adviezen</li>
+                <li>Mail: Noem AVG meldplicht en herstelstappen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <div id="onderwerp1" class="tab-content active">
           <div class="content-header">
