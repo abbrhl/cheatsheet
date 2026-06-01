@@ -1037,14 +1037,139 @@ SHOW VARIABLES LIKE 'general_log%';</pre>
               </a>
             </p>
             <hr>
-            <h4>Hoe te gebruiken</h4>
+
+            <h4>📑 Bijlage 2.1 — Sjabloon Onderzoeksverslag</h4>
+            <p><b>Datum:</b> 31-1-2024<br>
+            <b>Auteur:</b> Tijmen Schmidt<br>
+            <b>Opdrachtgever:</b> Securityofficer AmeRijck vakantiepark</p>
+
+            <hr>
+
+            <h4>Managementsamenvatting</h4>
+            <p><i>[Geef hier in het kort een samenvatting voor de directie met de aanleiding, de ondernomen acties, het resultaat, een conclusie en een advies.]</i></p>
+            <p>De aanleiding voor deze audit is dat er een securityincident is bij Apotheek AmeRijck van het vakantiepark op Helderoog, op een forum is informatie gevonden die duidt op een informatielek van gegevens uit de database van Apotheek AmeRijck.</p>
+            <p>De remote accestool is gede-installeerd, de firewall en antivirus zijn aangezet. Ook is er geen virusinfectie meer. Het rootpassword van MySQL is veranderd vanuit 'root'. De strong authenticatie is afgedwongen in de database.</p>
+            <p>Mijn advies is dat het standaardwachtwoord van 'root' wordt veranderd naar een wachtwoord die niet standaard is. Dit is zodat niet zomaar iedereen in de root kan komen van de MySQL-server.</p>
+            <p>De Firewall en antivirus moeten ook worden aangezet voor meer veiligheid in het netwerk.</p>
+            <p>De remote accestool moet worden verwijderd zodat er geen ongecontroleerde toegang kan worden verkregen.</p>
+
+            <hr>
+
+            <h4>Overzicht onderzoek</h4>
+            <p><i>[Een toelichting op wat onderzocht is en op welke manier.]</i></p>
             <ul>
-              <li>Open het bestand in Word</li>
-              <li>Beantwoord de 4 directie-vragen (Hoe, Wanneer, Welke info, Hoeveel)</li>
-              <li>Voeg screenshots toe als bewijs van bevindingen</li>
-              <li>Vul de communicatiematrix aan het eind in</li>
-              <li>Zie de Claude tab (STAP 3) voor het uitgebreide stappenplan</li>
+              <li>Firewall stond eerst uit</li>
+              <li>Ultra VNC is onderzocht en er is een log gevonden</li>
+              <li>Rudi is hier blijkbaar actief mee geweest</li>
             </ul>
+
+            <hr>
+
+            <h4>Wat is er onderzocht?</h4>
+            <p><i>[Een beschrijving van de punten waarop controles zijn uitgevoerd.]</i></p>
+            <ul>
+              <li>Firewall stond uit</li>
+              <li>MySQL password = root</li>
+              <li>De Antivirus stond uit</li>
+              <li>UltraVNC stond erop</li>
+            </ul>
+
+            <hr>
+
+            <h4>Gevonden zwakheden</h4>
+            <p><i>[Beschrijf de zwakheden met hun risiconiveau die mogelijk hebben bijgedragen tot het incident. Gebruik eventueel de matrix om dit overzichtelijk te rapporteren.]</i></p>
+
+            <p><b>Risicomatrix:</b></p>
+            <table class="prose-table">
+              <thead><tr><th>Kans \ Impact</th><th>Laag</th><th>Middel</th><th>Hoog</th></tr></thead>
+              <tbody>
+                <tr><td><b>Hoog</b></td><td>B</td><td></td><td>D</td></tr>
+                <tr><td><b>Middel</b></td><td></td><td>A</td><td></td></tr>
+                <tr><td><b>Laag</b></td><td></td><td></td><td>C</td></tr>
+              </tbody>
+            </table>
+
+            <hr>
+
+            <h4>Beschrijving gevonden bewijzen van eventueel misbruik</h4>
+            <p><i>[Beschrijf welk soort bewijzen zijn gevonden.]</i></p>
+            <p>De details van dit bewijs zijn dat alle COLUMNS van 'apotheek' zijn bekeken op 2022-06-07 om ongeveer 4 uur in de middag.</p>
+
+            <hr>
+
+            <h4>Inhoud van gevonden bewijzen</h4>
+            <p><i>[Beschrijf de relevante details van de bewijzen.]</i></p>
+            <p>Access denied, en daarna is iemand in de database gekomen.</p>
+
+            <hr>
+
+            <h4>Bericht mogelijk datalek</h4>
+            <p><i>[Geef aan of en waarom er eventueel een melding gedaan moet worden bij het meldloket datalekken. Benoem hierbij welke gegevens mogelijk zijn gelekt en hoeveel personen hiervan mogelijk slachtoffer zijn.]</i></p>
+            <p>Het is van belang om een datalek melding te doen aangezien er gegevens zijn ingezien van patiënten, medicijnen en gasten. Ook de medicijngebruik is in kunnen zien door de inbreker.</p>
+            <p>Rudi, die eerder in dit document staat, heeft mee kunnen kijken met UltraVNC op de server.</p>
+
+            <hr>
+
+            <h4>Conclusie</h4>
+            <p><i>[Beschrijf jouw conclusies. Neem ook een matrix met kans en impact op van de gevonden zwakheden.]</i></p>
+            <ul>
+              <li>Remote acces uitzetten</li>
+              <li>Antivirus aanzetten</li>
+              <li>Firewall terug inschakelen</li>
+              <li>Root wachtwoord aanpassen</li>
+            </ul>
+
+            <p><b>Risicomatrix van de Conclusie:</b></p>
+            <table class="prose-table">
+              <thead><tr><th>Kans \ Impact</th><th>Laag</th><th>Middel</th><th>Hoog</th></tr></thead>
+              <tbody>
+                <tr><td><b>Hoog</b></td><td>D</td><td></td><td></td></tr>
+                <tr><td><b>Middel</b></td><td></td><td>A</td><td>B</td></tr>
+                <tr><td><b>Laag</b></td><td></td><td></td><td>C</td></tr>
+              </tbody>
+            </table>
+
+            <hr>
+
+            <h4>Advies</h4>
+            <p><i>[Geef adviezen op basis van jouw conclusies om tot een betere balans van werkbaarheid en veiligheid te komen voor de organisatie.]</i></p>
+            <p>Mijn advies is dat het standaardwachtwoord van 'root' wordt veranderd naar een wachtwoord die niet standaard is. Dit is zodat niet zomaar iedereen in de root kan komen van de MySQL-server.</p>
+            <p>De Firewall en antivirus moeten ook worden aangezet voor meer veiligheid in het netwerk.</p>
+            <p>De remote accestool moet worden verwijderd zodat er geen ongecontroleerde toegang kan worden verkregen.</p>
+
+            <hr>
+
+            <h4>Communicatieadvies</h4>
+            <p>Wij adviseren de organisatie om volgens de onderstaande communicatiematrix te communiceren.</p>
+            <p><i>[Kruis aan wie welke informatie moet gaan krijgen.]</i></p>
+
+            <table class="prose-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Gevonden zwakheden</th>
+                  <th>Beschrijving gevonden bewijzen</th>
+                  <th>Inhoudelijk gevonden bewijzen</th>
+                  <th>Aangebrachte aanpassingen</th>
+                  <th>Bericht mogelijk datalek</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Jouw leidinggevende</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr>
+                <tr><td>Securityofficer van AmeRijck</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td></tr>
+                <tr><td>Directie van AmeRijck</td><td>x</td><td></td><td></td><td></td><td>x</td></tr>
+                <tr><td>Lokale media</td><td></td><td></td><td></td><td>x</td><td>x</td></tr>
+                <tr><td>Nationale media</td><td></td><td></td><td></td><td></td><td>x</td></tr>
+                <tr><td>Meldloket datalekken</td><td></td><td></td><td></td><td></td><td>x</td></tr>
+                <tr><td>Politie</td><td>x</td><td>x</td><td>x</td><td></td><td></td></tr>
+                <tr><td>De afdeling IT van AmeRijck</td><td>x</td><td>x</td><td>x</td><td>x</td><td></td></tr>
+                <tr><td>De afdeling Marketing van AmeRijck</td><td></td><td></td><td></td><td></td><td>x</td></tr>
+                <tr><td>De receptie van AmeRijck</td><td></td><td></td><td></td><td></td><td>x</td></tr>
+              </tbody>
+            </table>
+
+            <p><i>[NB Gebruik gerust het internet, maar vermeld wel een gevonden bron en beschrijf altijd de gevonden informatie in eigen woorden.]</i></p>
+
           </article>
         </div>
 
