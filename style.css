@@ -699,6 +699,35 @@ h3.pink   { color: #c0397a; }
   border: 1px solid rgba(167, 139, 250, 0.15);
 }
 
+.prose .code-block {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-left: 3px solid #a78bfa;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0 1.5rem;
+  color: #e2e8f0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.prose blockquote {
+  background: rgba(139, 92, 246, 0.06);
+  border-left: 3px solid #a78bfa;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.4rem;
+  margin: 1rem 0 1.5rem;
+  color: #cbd5e0;
+  font-style: italic;
+}
+
+.prose blockquote ol {
+  font-style: normal;
+}
+
 .prose hr {
   border: none;
   height: 1px;
