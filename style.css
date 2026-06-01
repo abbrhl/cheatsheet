@@ -812,6 +812,18 @@ h3.pink   { color: #c0397a; }
 .rm-yellow { background: #f1c40f; }
 .rm-green  { background: #7cb342; color: #fff; }
 
+/* PROSE IMAGES */
+.prose-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  margin: 1rem 0 1.5rem;
+  background: #fff;
+  padding: 0.5rem;
+  display: block;
+}
+
 .prose hr {
   border: none;
   height: 1px;
