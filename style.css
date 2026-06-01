@@ -728,6 +728,27 @@ h3.pink   { color: #c0397a; }
   font-style: normal;
 }
 
+/* DOWNLOAD BUTTON */
+.download-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff !important;
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(102,126,234,0.35);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(102,126,234,0.5);
+}
+
 .prose hr {
   border: none;
   height: 1px;
