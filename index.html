@@ -1015,6 +1015,84 @@ SHOW VARIABLES LIKE 'general_log%';</pre>
               <li>Windows wilt niet updaten: <a href="https://www.pc-tips.info/tips/windows-tips/windows-10-update-20h2-wil-niet-installeren/" target="_blank" rel="noopener">pc-tips.info</a></li>
               <li><a href="https://learn.microsoft.com/nl-nl/troubleshoot/windows-client/deployment/windows-update-issues-troubleshooting/" target="_blank" rel="noopener">Microsoft Windows Update Troubleshooting</a></li>
             </ul>
+
+            <div class="version-a">
+              <div class="rewrite-separator"><span>✏️ Herschreven versie</span></div>
+
+              <div class="rewrite-block">
+
+                <h4>Managementsamenvatting</h4>
+                <p><b>T.A.V. Directie:</b><br>
+                Als zorgverlenende organisatie is Apotheek AmeRijck wettelijk verplicht hun IT-systemen periodiek te laten doorlichten. In dit document delen wij de uitkomsten van die jaarlijkse beveiligingscontrole, met daarin een overzicht van de geconstateerde tekortkomingen en risico's binnen het systeem.</p>
+
+                <h4>Overzicht onderzoek</h4>
+                <p>Voor deze controle is gebruik gemaakt van Microsoft Baseline Security Analyzer als hoofdscanner. Aanvullend zijn er gesprekken gevoerd met verschillende medewerkers om naast de digitale ook de fysieke kant van de beveiliging te kunnen beoordelen. De SysinternalsSuite is daarna ingezet om dieper in te zoomen op de netwerkpoorten van het systeem.</p>
+
+                <p><b>Interview baliemedewerker:</b> Tijdens kortstondige momenten weg van de werkplek — bijvoorbeeld om medicatie op te halen — laten medewerkers hun computer regelmatig ontgrendeld achter. Daarnaast werd er een USB-stick van een externe vertegenwoordiger zonder controle aangesloten om een document te printen. Ook valt op dat de server direct verbonden staat met het open internet, wat ongewenst is.</p>
+
+                <p><b>Interview Backofficemedewerker:</b> De computer van de apotheker wordt door meerdere personen gedeeld. Het wachtwoord daarvan ligt fysiek onder het toetsenbord — dit is volgens medewerkers nodig omdat het te complex zou zijn om te onthouden. Daarbij kan iedere gebruiker bij alle bestanden in de verkenner. De werkwijze voor database-invoer verloopt via een tussenstap in Excel: de gegevens worden eerst handmatig aangepast en pas daarna geïmporteerd. De computers en server blijven verder zonder wachtwoordbeveiliging openstaan.</p>
+
+                <p><b>Interview apotheker:</b> Volgens de eigenaar bestaat het team uit 4 voltijdmedewerkers en 2 parttimers. Aangezien hij niet alle dagen aanwezig is, sluiten ook bepaalde vaste werknemers met hun eigen sleutel het pand af. Bij openen of sluiten wordt echter niets vastgelegd in een register — niemand documenteert wie wanneer aanwezig is geweest. Patiëntendocumenten van artsen en ziekenhuizen worden eerst gedigitaliseerd en vervolgens ongeschonden weggegooid in een gewone afvalbak. Doordat er geen toezichtcamera's hangen binnen of rondom de apotheek, liggen deze gevoelige papieren onbeschermd. Verder ontbreekt er een geformaliseerd beveiligingsbeleid. IT-onderhoud wordt informeel uitgevoerd door de partner van een medewerker.</p>
+
+                <p><b>Server:</b> Op de server staan onder andere poorten <b>464</b> en <b>636</b> open, terwijl uit ons onderzoek blijkt dat niemand binnen de organisatie kan toelichten welke functie deze poorten hebben. Een aantal gedeelde mappen zijn vrij toegankelijk zonder wachtwoord. De updates van het besturingssysteem lopen niet bij. De scantool laat bovendien verschillende beveiligingsproblemen zien. De Windows Firewall is volledig uitgeschakeld. Bij het uitlezen van de Firewall Log valt verkeer richting externe IP-adressen op.</p>
+
+                <p><b>Eigen bevindingen:</b><br>
+                In de Downloads-map zijn diverse opvallende bestanden aangetroffen:</p>
+                <ul>
+                  <li>Een tekstdocument met de naam <code>Nicepics.txt</code></li>
+                  <li>Wallpaper-bestanden die niet op een productieserver thuishoren</li>
+                  <li>Installatiemedia waaronder een bestand genaamd <code>Test ISO.iso</code></li>
+                  <li>Een snelkoppeling naar <code>Office.com</code> op het bureaublad — geen voor de hand liggende plek</li>
+                </ul>
+                <p>Daarnaast bevat de gedeelde map "Algemeen bestanden" een telefoonlijst plus een overzicht van personeelsleden inclusief persoonsgevoelige gegevens, terwijl dit type informatie niet open beschikbaar zou moeten zijn.</p>
+
+                <h4>Onderbouwing keuze onderzoekshulpmiddelen</h4>
+                <p><b>Microsoft Baseline Security Analyzer</b> is gekozen omdat dit pakket op een snelle en efficiënte manier zwakheden in de Windows-configuratie kan opsporen.</p>
+                <p><b>SysinternalsSuite</b> is gebruikt als aanvulling om gericht het netwerkverkeer en open poorten in kaart te brengen.</p>
+
+                <h4>Gedetailleerde resultaten</h4>
+
+                <p><b>1. Automatic updates system services is not running.</b><br>
+                De service voor automatische updates draait niet, wat een serieus probleem is. Het systeem ontvangt hierdoor geen patches meer tegen malware en virussen. Wanneer hier geen actie op wordt ondernomen kan dit ertoe leiden dat de bedrijfsvoering volledig stilvalt.</p>
+
+                <p><b>2. Incomplete Updates</b><br>
+                De installatie van een update is niet volledig afgerond. Hierdoor kunnen vervolgupdates achterblijven omdat het systeem op de huidige update is blijven hangen.</p>
+
+                <p><b>3. Meer dan 2 Administrators gevonden op server 1.</b><br>
+                Doordat het aantal beheerdersaccounts hoog ligt, neemt de kans toe dat één van die accounts gecompromitteerd raakt. Een gestolen administratoraccount geeft de aanvaller volledige controle, wat zware schade kan toebrengen aan zowel het systeem als de server.</p>
+
+                <p><b>4. 12 van de 140 gebruikers hebben wachtwoorden die niet kunnen verlopen.</b><br>
+                Wanneer een lokaal account de optie 'wachtwoord verloopt nooit' heeft, wordt de regel voor maximale wachtwoordleeftijd vanuit het Groepsbeleid overruled. Een gebruiker kan daardoor jarenlang hetzelfde wachtwoord blijven gebruiken. Mocht zo'n wachtwoord uitlekken en is er geen tweestapsverificatie ingesteld, dan staat de deur wagenwijd open voor langdurige datadiefstal of bredere netwerkaanvallen.</p>
+
+                <p><b>5. Firewall staat helemaal uit</b><br>
+                De Windows Firewall is een verdedigingsmechanisme dat regelt welk verkeer er tussen de computer en het netwerk wordt toegelaten of geblokkeerd. Bij de gescande server bleek de firewall echter niet actief op alle interfaces. Zonder firewall ligt de toegang tot het systeem effectief open voor virussen, hackers en externe aanvallen.</p>
+
+                <p><b>6. Auditing staat disabled</b><br>
+                De auditfunctie is uitgeschakeld, waardoor er geen registratie plaatsvindt van inlog- of uitlogpogingen op het systeem.</p>
+
+                <p><b>7. Kan de security CAB file niet laden</b><br>
+                Het besturingssysteem kan de security CAB-bestanden niet inladen, met als gevolg dat aanvullende beveiligingsdefinities niet toegepast kunnen worden op de server.</p>
+
+                <p><b>8. Geen beveiligingscamera's binnen en buiten het pand</b><br>
+                Uit de gevoerde gesprekken blijkt dat er geen camerasysteem aanwezig is. Het ontbreken van cameratoezicht maakt dat gevoelige data — patiëntinformatie, financiële documenten, wachtwoorden — onbeschermd is. Met name de papierbak buiten het pand vormt een risico.</p>
+
+                <p><b>9. Wachtwoord op een briefje onder het toetsenbord</b><br>
+                Uit de interviews komt naar voren dat wachtwoorden op een briefje fysiek onder het toetsenbord worden bewaard. Een dergelijke werkwijze met wachtwoorden brengt het risico op datadiefstal en ongeautoriseerde toegang tot het systeem met zich mee.</p>
+
+                <h4>Verbetervoorstel</h4>
+                <ul>
+                  <li><b>Automatische updates:</b> Activeer de automatische updates zodat het systeem altijd de meest recente beveiligingspatches binnenkrijgt.</li>
+                  <li><b>Incomplete updates:</b> Werk de openstaande updates volledig bij om kwetsbaarheden in het systeem af te dichten.</li>
+                  <li><b>Meer dan 2 administrators:</b> Verminder het aantal administrator-accounts en geef alleen verhoogde rechten waar dat absoluut noodzakelijk is.</li>
+                  <li><b>Wachtwoorden verlopen niet:</b> Stel een wachtwoordverloopbeleid in voor alle accounts, zodat oude wachtwoorden niet eindeloos blijven hangen.</li>
+                  <li><b>Firewall uit:</b> Zet de Windows Firewall op alle profielen aan en sta alleen het verkeer toe dat noodzakelijk is voor de bedrijfsvoering.</li>
+                  <li><b>Auditing disabled:</b> Activeer audit logging zodat alle in- en uitlogpogingen worden bijgehouden voor monitoring en forensisch onderzoek.</li>
+                  <li><b>Security CAB file:</b> Onderzoek waarom het bestand niet geladen kan worden en zorg dat deze correct is geconfigureerd en bereikbaar.</li>
+                </ul>
+
+              </div>
+            </div>
+
           </article>
         </div>
 
@@ -1164,6 +1242,55 @@ SHOW VARIABLES LIKE 'general_log%';</pre>
 
             <p><i>[NB Gebruik gerust het internet, maar vermeld wel een gevonden bron en beschrijf altijd de gevonden informatie in eigen woorden.]</i></p>
 
+            <div class="version-a">
+              <div class="rewrite-separator"><span>✏️ Herschreven versie</span></div>
+
+              <div class="rewrite-block">
+
+                <h4>Managementsamenvatting</h4>
+                <p>De directe aanleiding voor dit onderzoek is een securityincident bij Apotheek AmeRijck, gevestigd op vakantiepark Helderoog. Op een online forum zijn berichten verschenen waaruit naar voren komt dat er gegevens uit de database van de apotheek zijn uitgelekt.</p>
+                <p>In reactie hierop is de aangetroffen remote-access tool gedeïnstalleerd, zijn zowel de firewall als de antivirussoftware geactiveerd en is een virusinfectie verwijderd. Het standaard MySQL root-wachtwoord is gewijzigd, en in de database is sterke authenticatie verplicht gemaakt.</p>
+                <p>Wij raden aan om het standaardwachtwoord 'root' permanent te vervangen door een uniek en complex wachtwoord, zodat de root-toegang tot de MySQL-server niet langer voor iedereen voor de hand ligt. Daarnaast moeten firewall en antivirus structureel actief blijven om de netwerkbeveiliging op peil te houden, en moet de remote-access software permanent verwijderd worden om ongecontroleerde toegang tot de server uit te sluiten.</p>
+
+                <h4>Overzicht onderzoek</h4>
+                <ul>
+                  <li>Bij aanvang van het onderzoek was de firewall niet actief.</li>
+                  <li>Bij het onderzoeken van Ultra VNC is een logbestand naar boven gekomen.</li>
+                  <li>Hieruit blijkt dat een persoon genaamd Rudi hier actief mee bezig is geweest.</li>
+                </ul>
+
+                <h4>Wat is er onderzocht?</h4>
+                <ul>
+                  <li>De status van de firewall (stond uit)</li>
+                  <li>Het MySQL-wachtwoord (was nog ingesteld op 'root')</li>
+                  <li>De status van de antivirus (was uitgeschakeld)</li>
+                  <li>De aanwezigheid van UltraVNC op het systeem</li>
+                </ul>
+
+                <h4>Beschrijving gevonden bewijzen van eventueel misbruik</h4>
+                <p>Het bewijsmateriaal wijst uit dat alle kolommen van de tabel 'apotheek' op 7 juni 2022 rond 16:00 uur zijn ingezien.</p>
+
+                <h4>Inhoud van gevonden bewijzen</h4>
+                <p>Eerst werd toegang geweigerd, maar kort daarna heeft de aanvaller wel toegang weten te krijgen tot de database.</p>
+
+                <h4>Bericht mogelijk datalek</h4>
+                <p>Het is essentieel om een datalekmelding te doen, omdat gegevens van patiënten, medicijnvoorraad en gasten ingezien zijn. Ook het medicijngebruik per persoon was inzichtelijk voor de indringer.</p>
+                <p>Zoals eerder in dit document genoemd, heeft Rudi via UltraVNC kunnen meekijken op de server.</p>
+
+                <h4>Conclusie</h4>
+                <ul>
+                  <li>Remote-access op de server volledig uitschakelen</li>
+                  <li>Antivirussoftware opnieuw activeren</li>
+                  <li>Firewall opnieuw inschakelen</li>
+                  <li>Het standaard root-wachtwoord wijzigen</li>
+                </ul>
+
+                <h4>Advies</h4>
+                <p>Wij raden aan om het standaardwachtwoord 'root' te vervangen door een sterk, uniek wachtwoord, zodat root-toegang tot de MySQL-server niet meer triviaal mogelijk is. De firewall en antivirus dienen permanent actief te blijven om het netwerk veilig te houden. De remote-access tool moet verwijderd worden om te voorkomen dat ongeautoriseerde personen toegang verkrijgen tot de server.</p>
+
+              </div>
+            </div>
+
           </article>
         </div>
 
@@ -1261,6 +1388,81 @@ SHOW VARIABLES LIKE 'general_log%';</pre>
                 </tr>
               </tbody>
             </table>
+
+            <div class="version-a">
+              <div class="rewrite-separator"><span>✏️ Herschreven versie</span></div>
+
+              <div class="rewrite-block">
+                <h4>Logboek — Aangebrachte aanpassingen</h4>
+                <p>Tijdens het hardenen van de server zijn onderstaande wijzigingen doorgevoerd. Per actie is bijgehouden op welk tijdstip welke kwetsbaarheid is verholpen, met bijbehorende screenshot ter onderbouwing.</p>
+                <p><b>Datum van uitvoering:</b> 6-11-2023</p>
+
+                <table class="prose-table">
+                  <thead>
+                    <tr>
+                      <th>Tijd</th>
+                      <th>Geconstateerd probleem</th>
+                      <th>Doorgevoerde maatregel</th>
+                      <th>Bewijs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>15:00</td>
+                      <td>De Windows Firewall stond niet aan</td>
+                      <td>Firewall opnieuw geactiveerd op alle profielen</td>
+                      <td><a href="downloads/firewall-log.png" target="_blank"><img src="downloads/firewall-log.png" alt="firewall-log" class="thumb"/></a></td>
+                    </tr>
+                    <tr>
+                      <td>15:10</td>
+                      <td>Antivirussoftware was uitgeschakeld</td>
+                      <td>Antivirusbescherming weer ingeschakeld</td>
+                      <td><a href="downloads/windows.png" target="_blank"><img src="downloads/windows.png" alt="windows" class="thumb"/></a></td>
+                    </tr>
+                    <tr>
+                      <td>15:20</td>
+                      <td>Windows-updates waren gedeactiveerd</td>
+                      <td>Update-mechanisme weer geactiveerd</td>
+                      <td><a href="downloads/configure.png" target="_blank"><img src="downloads/configure.png" alt="configure" class="thumb"/></a></td>
+                    </tr>
+                    <tr>
+                      <td>15:30</td>
+                      <td>Onbevoegde remote-access tool gedetecteerd</td>
+                      <td>Tool gedeïnstalleerd en restanten opgeruimd</td>
+                      <td>
+                        <a href="downloads/remote.png" target="_blank"><img src="downloads/remote.png" alt="remote" class="thumb"/></a>
+                        <a href="downloads/remote2.png" target="_blank"><img src="downloads/remote2.png" alt="remote2" class="thumb"/></a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>15:40</td>
+                      <td>Het MySQL root-wachtwoord stond op de standaardwaarde 'root'</td>
+                      <td>Wachtwoord aangepast naar een sterk wachtwoord (Technova123)</td>
+                      <td><a href="downloads/root.png" target="_blank"><img src="downloads/root.png" alt="root" class="thumb"/></a></td>
+                    </tr>
+                    <tr>
+                      <td>15:50</td>
+                      <td>Systeem was geïnfecteerd met een virus</td>
+                      <td>Infectie opgespoord en verwijderd</td>
+                      <td><a href="downloads/virusinfectie.png" target="_blank"><img src="downloads/virusinfectie.png" alt="virusinfectie" class="thumb"/></a></td>
+                    </tr>
+                    <tr>
+                      <td>15:55</td>
+                      <td>Wachtwoorden waren ingesteld om nooit te verlopen</td>
+                      <td>Verloopinstelling teruggezet naar een redelijke periode</td>
+                      <td><a href="downloads/security.png" target="_blank"><img src="downloads/security.png" alt="security" class="thumb"/></a></td>
+                    </tr>
+                    <tr>
+                      <td>—</td>
+                      <td>Authenticatie ontbrak / was onvoldoende</td>
+                      <td>Reguliere authenticatie-instellingen toegepast</td>
+                      <td><a href="downloads/authenticatie.png" target="_blank"><img src="downloads/authenticatie.png" alt="authenticatie" class="thumb"/></a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
           </article>
         </div>
 
@@ -1298,6 +1500,34 @@ SHOW VARIABLES LIKE 'general_log%';</pre>
 
                 <p>Met vriendelijke groet,<br>
                 Nicky van der Meijden</p>
+              </div>
+            </div>
+
+            <div class="version-a">
+              <div class="rewrite-separator"><span>✏️ Herschreven versie</span></div>
+
+              <div class="email-box rewrite-block">
+                <div class="email-header">
+                  <div><b>Van:</b> &lt;NickyvanderMeijden@Technova.nl&gt;</div>
+                  <div><b>Aan:</b> Opdrachtgever@examen.nl</div>
+                  <div><b>CC:</b> </div>
+                  <div><b>Onderwerp:</b> Melding datalek bij Apotheek AmeRijck</div>
+                </div>
+
+                <div class="email-body">
+                  <p>Geachte opdrachtgever,</p>
+
+                  <p>Via een openbaar forum is naar voren gekomen dat er bij Apotheek AmeRijck op vakantiepark Helderoog informatie circuleert die afkomstig lijkt uit hun database. Dit duidt op een lek van gegevens uit het apotheeksysteem.</p>
+
+                  <p>Het is van belang om de klanten van de apotheek op de hoogte te brengen van dit incident. Zij ontvangen daarom een mail met het dringende verzoek om hun wachtwoord direct te wijzigen, en worden tegelijkertijd geïnformeerd over wat er precies is gebeurd.</p>
+
+                  <p>De oorzaken van het datalek hebben wij inmiddels weten af te dichten. Concreet zijn er aanpassingen gedaan in de configuratie en is de aangetroffen kwaadaardige software verwijderd van het systeem.</p>
+
+                  <p>Vanwege de wettelijke verplichtingen wordt dit incident gemeld bij de Autoriteit Persoonsgegevens, die het verdere proces in goede banen zal leiden. Daarnaast wordt het ook aangegeven bij de politie.</p>
+
+                  <p>Met vriendelijke groet,<br>
+                  Nicky van der Meijden</p>
+                </div>
               </div>
             </div>
 

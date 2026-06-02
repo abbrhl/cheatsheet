@@ -824,6 +824,52 @@ h3.pink   { color: #c0397a; }
   display: block;
 }
 
+/* REWRITE SEPARATOR */
+.rewrite-separator {
+  margin: 4rem 0 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.rewrite-separator::before,
+.rewrite-separator::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 35%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a78bfa, transparent);
+}
+
+.rewrite-separator::before { left: 0; }
+.rewrite-separator::after  { right: 0; }
+
+.rewrite-separator span {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 16px rgba(167,139,250,0.35);
+  text-transform: uppercase;
+}
+
+.rewrite-block {
+  background: rgba(167,139,250,0.04);
+  border: 1px solid rgba(167,139,250,0.15);
+  border-radius: 14px;
+  padding: 2rem 2.5rem;
+  margin: 1rem 0;
+}
+
+.rewrite-block h3,
+.rewrite-block h4 {
+  color: #c4b5fd;
+}
+
 /* EMAIL BOX */
 .email-box {
   background: rgba(255,255,255,0.04);
